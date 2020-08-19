@@ -164,6 +164,8 @@ class FormEditor extends Component {
         element,
         options,
         required,
+        readOnly,
+        rtl,
         numberOfStars,
         label,
         min,
@@ -216,6 +218,40 @@ class FormEditor extends Component {
                 />
                 <label htmlFor="required" className="form-label ml-2">
                   Required
+                </label>
+              </div>
+            )}
+          </div>
+
+          <div className="mt-5">
+            {/* ------------- READ ONLY ------------- */}
+            {true && (
+              <div className="form-check">
+                <input
+                  type="checkbox"
+                  id="readOnly"
+                  checked={readOnly}
+                  onChange={() => this.toggleField("readOnly")}
+                />
+                <label htmlFor="readOnly" className="form-label ml-2">
+                  Read only
+                </label>
+              </div>
+            )}
+          </div>
+          
+            <div className="mt-5">
+            {/* ------------- Right to left ------------- */}
+            {true && (
+              <div className="form-check">
+                <input
+                  type="checkbox"
+                  id="rtl"
+                  checked={rtl}
+                  onChange={() => this.toggleField("rtl")}
+                />
+                <label htmlFor="rtl" className="form-label ml-2">
+                  Right-to-left
                 </label>
               </div>
             )}

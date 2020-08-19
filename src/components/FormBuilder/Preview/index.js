@@ -70,7 +70,7 @@ class Preview extends Component {
               onClick={() => onSubmit(JSON.stringify(previewItems))}
               disabled={isEmpty(previewItems)}
             >
-              Export
+              Save
             </button>
           </div>
           <div
