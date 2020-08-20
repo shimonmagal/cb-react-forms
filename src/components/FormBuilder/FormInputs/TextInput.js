@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
 
 class TextInput extends Component {
+  componentWillMount()
+  {
+    this.props.input.onChange(this.props.defaultValue || "");
+  }
+
   render() {
     
     const  {
@@ -17,8 +22,6 @@ class TextInput extends Component {
       showError,
       defaultValue,
     } = this.props;
-
-    input.onChange(defaultValue);
 
     const _props = generator ? {
       ...input,
