@@ -21,7 +21,7 @@ class TextInput extends Component {
     const _props = generator ? {
       ...input,
       disabled: readOnly,
-      value: defaultValue || input.value,
+      defaultValue: defaultValue,
       onChange: e => input.onChange(e.target.value),
       style: {
         borderColor: meta.touched && required && meta.error ? "red" : ""

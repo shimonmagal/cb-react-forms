@@ -20,7 +20,7 @@ class Dropdown extends Component {
     const _props = generator ? {
       ...input,
       disabled: readOnly,
-      value: defaultValue || input.value,
+      defaultValue: defaultValue,
       onChange: e => {
         console.log(e.target.value)
         input.onChange(e.target.value)
