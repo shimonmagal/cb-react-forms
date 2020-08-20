@@ -5,8 +5,11 @@ class TextInput extends Component {
 
   componentDidMount()
   {
-    console.log(this.props);
-    this.props.input.onChange(this.props.defaultValue || "");
+     setTimeout(() => {
+      console.log("----");
+      console.log(this.props);
+      this.props.input.onChange(this.props.defaultValue || "");
+    });
   }
 
   render() {
