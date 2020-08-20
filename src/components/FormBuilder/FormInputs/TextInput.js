@@ -4,6 +4,7 @@ import HeaderLabel from "./HeaderLabel";
 class TextInput extends Component {
   componentWillMount()
   {
+    console.log(this.props);
     this.props.input.onChange(this.props.defaultValue || "");
   }
 
