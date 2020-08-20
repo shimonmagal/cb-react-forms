@@ -2,14 +2,20 @@ import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
 
 class TextInput extends Component {
-
-  componentDidMount()
+  constructor(props)
   {
-     setTimeout(() => {
-      console.log("----");
-      console.log(this.props);
+    super(props)
+
+    this.first = true;
+  }
+
+  componentDidUpdate()
+  {
+    if (this.props.defaultValue && this.first)
+    {
       this.props.input.onChange(this.props.defaultValue || "");
-    });
+      this.first = false;
+    }
   }
 
   render() {
