@@ -14,11 +14,7 @@ const convertHtmlToRawJs = html => {
 const html = "<div>Placeholder Label</div>";
 
 export default (item) => {
-  console.log("----")
-  console.log(item);
-  console.log("----")
-
-  switch (item) {
+  switch (item.key) {
     case 'Header':
     case 'Paragraph':
     case 'Label':
