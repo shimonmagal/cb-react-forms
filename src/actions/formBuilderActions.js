@@ -11,7 +11,7 @@ import {
 
 export const addItem = wholeItem => {
   const id = wholeItem.name;
-  let element = item2.key
+  let element = wholeItem.key
   const props = addPropsToItem(element);
   const item = { id, element, ...props };
   return { 
