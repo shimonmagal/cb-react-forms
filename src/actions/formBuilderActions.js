@@ -10,7 +10,7 @@ import {
 } from "./types";
 
 export const addItem = wholeItem => {
-  const id = uuid();
+  const id = wholeItem.name;
   let element = wholeItem.key
   const props = addPropsToItem(element);
   const item = { id, element, ...props };
