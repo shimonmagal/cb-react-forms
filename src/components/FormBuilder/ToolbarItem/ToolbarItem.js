@@ -16,7 +16,7 @@ const spec = {
   },
   endDrag(props, monitor, component) {
     if (!monitor.didDrop()) return; // return if not dropped in the Preview component
-    props.addItem(props.data.key);
+    props.addItem(props.data);
   }
 };
 
@@ -36,7 +36,7 @@ const ToolbarItem = props => {
     <li
       style={{ cursor: "pointer", opacity, backgroundColor }}
       className="list-group-item mb-1 toolbar-item"
-      onClick={() => props.addItem(props.data.key)}
+      onClick={() => props.addItem(props.data)}
     >
       <i className={classNames(data.icon, "mr-3")} />
       {data.name}

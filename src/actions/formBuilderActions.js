@@ -9,8 +9,10 @@ import {
   SUBMIT_EDITOR_STATE
 } from "./types";
 
-export const addItem = element => {
+export const addItem = item2 => {
   const id = uuid();
+  console.log(item2);
+  let element = item2.key
   const props = addPropsToItem(element);
   const item = { id, element, ...props };
   return { 
