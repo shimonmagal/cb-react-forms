@@ -225,7 +225,7 @@ class FormEditor extends Component {
 
           <div className="mt-5">
             {/* ------------- READ ONLY ------------- */}
-            {true && (
+            {editorState.hasOwnProperty("required") && (
               <div className="form-check">
                 <input
                   type="checkbox"
@@ -242,7 +242,7 @@ class FormEditor extends Component {
           
             <div className="mt-5">
             {/* ------------- Right to left ------------- */}
-            {true && (
+            {editorState.hasOwnProperty("required") && (
               <div className="form-check">
                 <input
                   type="checkbox"

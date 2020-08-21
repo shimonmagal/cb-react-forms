@@ -81,7 +81,7 @@ class ValidatedFormInputs extends Component {
           }
 
           return (
-            <div key={formInput.id} className="mb-4" dir={formInput.rtl ? "rtl": "ltr"}>
+            <div disabled={formInput.readOnly} key={formInput.id} className="mb-4" dir={formInput.rtl ? "rtl": "ltr"}>
               {/* -------------- HEADER -------------- */}
               {element === "Header" && (
                 <Header item={{ label: formInput.label }} />
