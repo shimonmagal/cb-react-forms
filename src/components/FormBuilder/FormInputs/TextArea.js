@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
+import './FormadComponent'
 
-class TextArea extends Component {
+class TextArea extends FormadComponent {
   render() {
     const  {
       meta,

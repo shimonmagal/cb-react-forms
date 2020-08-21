@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
 import map from 'lodash/map';
+import './FormadComponent'
 
-class RadioButtons extends Component {
+class RadioButtons extends FormadComponent {
   render() {
     const  {
       id,

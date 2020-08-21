@@ -1,23 +1,8 @@
 import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
+import './FormadComponent'
 
-class TextInput extends Component {
-  constructor(props)
-  {
-    super(props)
-
-    this.first = true;
-  }
-
-  componentDidUpdate()
-  {
-    if (this.props.defaultValue && this.first)
-    {
-      this.props.input.onChange(this.props.defaultValue || "");
-      this.first = false;
-    }
-  }
-
+class TextInput extends FormadComponent {
   render() {
     
     const  {
@@ -33,8 +18,6 @@ class TextInput extends Component {
       showError,
       defaultValue,
     } = this.props;
-
-    console.log(this.props);
 
     const _props = generator ? {
       ...input,

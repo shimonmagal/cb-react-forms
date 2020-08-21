@@ -1,7 +1,24 @@
 import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
+import './FormadComponent'
 
-class NumberInput extends Component {
+class NumberInput extends FormadComponent {
+  constructor(props)
+  {
+    super(props)
+
+    this.first = true;
+  }
+
+  componentDidUpdate()
+  {
+    if (this.props.defaultValue && this.first)
+    {
+      this.props.input.onChange(this.props.defaultValue || 0);
+      this.first = false;
+    }
+  }
+
   render() {
     const  {
       type,

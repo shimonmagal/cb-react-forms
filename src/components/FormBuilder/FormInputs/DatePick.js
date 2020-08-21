@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import HeaderLabel from './HeaderLabel';
 import DatePicker from 'react-date-picker';
+import './FormadComponent'
 
-class DatePick extends Component {
+class DatePick extends FormadComponent {
   render() {
     const  {
       meta,

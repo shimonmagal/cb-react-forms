@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import HeaderLabel from './HeaderLabel';
+import './FormadComponent'
 
-class Dropdown extends Component {
+class Dropdown extends FormadComponent {
   render() {
     const  {
       meta,

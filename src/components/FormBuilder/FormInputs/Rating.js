@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import StarRatings from "react-star-ratings";
 import HeaderLabel from "./HeaderLabel";
+import './FormadComponent'
 
-class Rating extends Component {
+class Rating extends FormadComponent {
   constructor(props) {
     super(props);
     this.state = {
