@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
-import './FormadComponent'
+import FormadComponent from './FormadComponent';
 
 class Email extends FormadComponent {
   render() {

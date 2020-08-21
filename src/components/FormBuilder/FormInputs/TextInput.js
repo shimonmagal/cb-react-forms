@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
-import './FormadComponent'
+import FormadComponent from './FormadComponent';
 
 class TextInput extends FormadComponent {
   render() {

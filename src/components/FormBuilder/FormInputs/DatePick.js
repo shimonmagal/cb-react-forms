@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HeaderLabel from './HeaderLabel';
 import DatePicker from 'react-date-picker';
-import './FormadComponent'
+import FormadComponent from './FormadComponent';
 
 class DatePick extends FormadComponent {
   render() {
