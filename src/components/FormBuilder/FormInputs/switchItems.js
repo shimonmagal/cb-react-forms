@@ -16,6 +16,7 @@ import {
   LineBreak,
   Checkboxes,
   NumberInput,
+  FileInput,
   RadioButtons,
 } from "./index";
 
@@ -35,6 +36,8 @@ export default (item) => {
       return <LineBreak item={item} />;
     case "NumberInput":
       return <NumberInput item={item} />;
+    case "FileInput":
+      return <FileInput item={item} />;
     case "Paragraph":
       return <Paragraph item={item} />;
     case "RadioButtons":

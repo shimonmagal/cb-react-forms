@@ -15,6 +15,7 @@ import LineBreak from "./LineBreak";
 import Checkboxes from "./Checkboxes";
 import HeaderLabel from "./HeaderLabel";
 import NumberInput from "./NumberInput";
+import FileInput from "./FileInput";
 import RadioButtons from "./RadioButtons";
 
 export {
@@ -34,6 +35,7 @@ export {
   LineBreak,
   Checkboxes,
   NumberInput,
+  FileInput,
 	HeaderLabel,
   RadioButtons
 };

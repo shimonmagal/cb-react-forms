@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HeaderLabel from "./HeaderLabel";
 import FormadComponent from './FormadComponent';
 
-class NumberInput extends FormadComponent {
+class FileInput extends FormadComponent {
   constructor(props)
   {
     super(props)
@@ -51,10 +51,10 @@ class NumberInput extends FormadComponent {
   }
 }
 
-NumberInput.defaultProps = {
+FileInput.defaultProps = {
   generator: false,
   readOnly: false,
   className: "form-control",
 }
 
-export default NumberInput;
+export default FileInput;

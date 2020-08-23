@@ -26,6 +26,7 @@ import {
   Checkboxes, 
   HeaderLabel,
   NumberInput,
+  FileInput,
   RadioButtons, 
 } from "../FormBuilder/FormInputs";
 
@@ -176,6 +177,30 @@ class ValidatedFormInputs extends Component {
                       id,
                       readOnly,
                       type: "number",
+                      generator:true,
+                      required: required,
+                      readOnly: readOnly,
+                      label: formInput.label,
+                      showError: this.showError,
+                      defaultValue: responseData && responseData[id],
+                    }}
+                  />
+                </div>
+              )}
+
+              {/* -------------- File INPUT TAG -------------- */}
+              {element === "FileInput" && (
+                <div className="form-group">
+                  <Field
+                    name={id}
+                    component={FileInput}
+                    validate={
+                      required ? [isRequired] : null
+                    }
+                    props={{
+                      id,
+                      readOnly,
+                      type: "file",
                       generator:true,
                       required: required,
                       readOnly: readOnly,

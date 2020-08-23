@@ -50,6 +50,11 @@ export default () => [
     icon: "fa fa-plus"
   },
   {
+    key: "FileInput",
+    name: "File Input",
+    icon: "fa fa-plus"
+  },
+  {
     key: "TextArea",
     name: "Multi-line Input",
     icon: "fa fa-text-height"

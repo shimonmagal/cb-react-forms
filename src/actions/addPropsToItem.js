@@ -73,6 +73,13 @@ export default (item) => {
         value: 0
       };
       
+    case 'FileInput':
+      return {
+        required: false,
+        label: convertHtmlToRawJs(html),
+        value: 0
+      };
+
     case 'RadioButtons':
       return {
         required: false,
