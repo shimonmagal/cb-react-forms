@@ -19,7 +19,8 @@ const toolbar = {
     "textAlign",
     "fontSize",
     "link",
-    "history"
+    "history",
+    "image"
   ],
   inline: {
     inDropdown: false,
