@@ -122,6 +122,11 @@ class FormEditor extends Component {
 
   handleChange = (value, optionId, field) => {
     const { options } = this.state.editorState;
+
+    console.log(value);
+    console.log(optionId);
+    console.log(options);
+
     const updatedOptions = map(options, option => {
       if (option.id === optionId) {
         option[field] = value;
