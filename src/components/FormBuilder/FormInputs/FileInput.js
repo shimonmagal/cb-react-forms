@@ -27,7 +27,7 @@ class FileInput extends FormadComponent {
       ...input,
       disabled: readOnly,
       defaultValue: defaultValue,
-      onChange: e => {return 0},
+      onChange: e => input.onChange(e.target.value),
       style: {
         borderColor: meta.touched && required && meta.error ? "red" : ""
       },
