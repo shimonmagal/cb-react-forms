@@ -23,9 +23,6 @@ class FileInput extends FormadComponent {
       defaultValue,
     } = this.props;
 
-console.log(input.onChange);
-console.log(input);
-
     const props = generator ? {
       ...input,
       disabled: readOnly,
@@ -45,6 +42,7 @@ console.log(input);
         />
         <input 
           {...props}
+          value={null}
           type={type}
           className={className} 
         />
