@@ -23,11 +23,14 @@ class FileInput extends FormadComponent {
       defaultValue,
     } = this.props;
 
+console.log(input.onChange);
+console.log(input);
+
     const props = generator ? {
       ...input,
       disabled: readOnly,
       defaultValue: defaultValue,
-      onChange: e => input.onChange(e.target.value),
+      onChange: e => {return 0},
       style: {
         borderColor: meta.touched && required && meta.error ? "red" : ""
       },
