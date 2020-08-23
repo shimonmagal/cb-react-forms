@@ -35,6 +35,9 @@ const toolbar = {
 
 class FormEditor extends Component {
   constructor(props) {
+  console.log("-------->>>");
+  console.log(props.editorState);
+
     super(props);
     this.state = {
       editorState: {
