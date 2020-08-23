@@ -81,7 +81,8 @@ class ValidatedFormInputs extends Component {
           }
 
           return (
-            <div disabled={formInput.readOnly} key={formInput.id} className="mb-4" dir={formInput.rtl ? "rtl": "ltr"}>
+          <fieldset disabled={formInput.readOnly}>
+            <div key={formInput.id} className="mb-4" dir={formInput.rtl ? "rtl": "ltr"}>
               {/* -------------- HEADER -------------- */}
               {element === "Header" && (
                 <Header item={{ label: formInput.label }} />
@@ -374,6 +375,7 @@ class ValidatedFormInputs extends Component {
                 </React.Fragment>
               )}
             </div>
+          </fieldset>
           );
         })}
         {!readOnly && (
