@@ -12,13 +12,14 @@ import defaultItems from "./Toolbar/defaultItems";
 const Builder = ({
   editorVisible,
   onSubmit,
-  items
+  items,
+  editorState
 }) => {
   return (
     <React.Fragment>
       {
         editorVisible &&
-        <FormEditor />
+        <FormEditor editorState={editorState} />
       }
       <div className="container">
         <div className="row mt-3">
