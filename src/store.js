@@ -10,11 +10,4 @@ const store = createStore(
   composeWithDevTools()
 );
 
-const storeWithDefault = initialValue => createStore(
-  rootReducer,
-  initialValue,
-  composeWithDevTools()
-);
-
 export default store;
-export { storeWithDefault };

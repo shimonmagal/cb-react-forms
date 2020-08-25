@@ -6,7 +6,8 @@ import isEmpty from "lodash/isEmpty";
 import {
   removeItem,
   dragItem,
-  showEditor
+  showEditor,
+  initPreview
 } from "../../../actions/formBuilderActions";
 import FormInputs from "./SortableFormInputs";
 import FinalFormPreview from "./FinalFormPreview";
@@ -49,6 +50,7 @@ class Preview extends Component {
     console.log("yay");
     console.log(previewItems);
     console.log(previewItems2);
+    initPreview(previewItems2);
 
     return connectDropTarget(
       <div style={{ height: "100%" }} className="mt-3">

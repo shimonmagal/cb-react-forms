@@ -1,5 +1,6 @@
 import update from "immutability-helper";
 import {
+  INIT_PREVIEW,
   ADD_ITEM_TO_PREVIEW,
   REMOVE_ITEM_FROM_PREVIEW,
   DRAG_ITEM_IN_PREVIEW,
@@ -16,6 +17,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case INIT_PREVIEW:
+      return {
+        ...state,
+        previewItems: [...action.payload]
+      }
     case ADD_ITEM_TO_PREVIEW:
       return {
         ...state,

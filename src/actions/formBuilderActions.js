@@ -1,6 +1,7 @@
 import uuid from "uuid/v4";
 import addPropsToItem from './addPropsToItem';
-import { 
+import {
+  INIT_PREVIEW,
   ADD_ITEM_TO_PREVIEW, 
   REMOVE_ITEM_FROM_PREVIEW, 
   DRAG_ITEM_IN_PREVIEW,
@@ -8,6 +9,13 @@ import {
   HIDE_EDITOR,
   SUBMIT_EDITOR_STATE
 } from "./types";
+
+export const initPreivew = defaultItems => {
+  return {
+    type: INIT_PREVIEW, 
+    payload: defaultItems 
+  }
+}
 
 export const addItem = wholeItem => {
   let id = wholeItem.name;
