@@ -28,7 +28,7 @@ const Builder = ({
         <div className="row mt-3">
           <div className="col-md-8">
             <Preview
-              previewItems={previewItems2}
+              previewItems2={previewItems2}
               onSubmit={onSubmit}
             />
           </div>
@@ -46,7 +46,7 @@ const Builder = ({
 Builder.propTypes = {
 	onSubmit: PropTypes.func.isRequired,
 	items: PropTypes.array,
-  previewItems: PropTypes.array
+  previewItems2: PropTypes.array
 };
 
 Builder.defaultProps = {

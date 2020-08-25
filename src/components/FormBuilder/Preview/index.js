@@ -40,6 +40,7 @@ class Preview extends Component {
       removeItem,
       showEditor,
       previewItems,
+      previewItems2,
       connectDropTarget
     } = this.props;
 
@@ -47,6 +48,7 @@ class Preview extends Component {
 
     console.log("yay");
     console.log(previewItems);
+    console.log(previewItems2);
 
     return connectDropTarget(
       <div style={{ height: "100%" }} className="mt-3">
