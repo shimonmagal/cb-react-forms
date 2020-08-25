@@ -18,11 +18,20 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case INIT_PREVIEW:
+    {
+      console.log("here");
+      console.log(action.payload);
+
       return {
         ...state,
-        previewItems: [...action.payload]
+        previewItems: action.payload
       }
+    }
     case ADD_ITEM_TO_PREVIEW:
+      console.log("here2");
+      console.log(action.payload);
+      console.log(state.previewItems);
+
       return {
         ...state,
         previewItems: [...state.previewItems, action.payload]
