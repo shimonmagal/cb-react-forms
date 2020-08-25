@@ -15,6 +15,9 @@ const Builder = ({
   items,
   previewItems
 }) => {
+  console.log("badiz");
+  console.log(previewItems);
+
   return (
     <React.Fragment>
       {
