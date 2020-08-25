@@ -77,7 +77,7 @@ export default (item) => {
       return {
         required: false,
         label: convertHtmlToRawJs(html),
-        value: 0
+        value: ''
       };
 
     case 'RadioButtons':

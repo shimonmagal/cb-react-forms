@@ -52,7 +52,7 @@ export default () => [
   {
     key: "FileInput",
     name: "File Input",
-    icon: "fa fa-plus"
+    icon: "fa fa-file"
   },
   {
     key: "TextArea",

@@ -13,19 +13,20 @@ const Builder = ({
   editorVisible,
   onSubmit,
   items,
-  editorState
+  previewItems
 }) => {
   return (
     <React.Fragment>
       {
         editorVisible &&
-        <FormEditor editorState={editorState} />
+        <FormEditor />
       }
       <div className="container">
         <div className="row mt-3">
           <div className="col-md-8">
-            <Preview 
-              onSubmit={onSubmit} 
+            <Preview
+              previewItems={previewItems}
+              onSubmit={onSubmit}
             />
           </div>
           <div className="col-md-4">
@@ -41,7 +42,8 @@ const Builder = ({
 
 Builder.propTypes = {
 	onSubmit: PropTypes.func.isRequired,
-	items: PropTypes.array
+	items: PropTypes.array,
+  previewItems: PropTypes.array
 };
 
 Builder.defaultProps = {
