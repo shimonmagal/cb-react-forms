@@ -11,7 +11,7 @@ import {
 const initialState = {
   editorVisible: false,
   editorState: {},
-  previewItems: [{"id":"Header Text","element":"Header","label":{"blocks":[{"key":"dhv2q","text":"Placeholder Label","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}},{"id":"Label","element":"Label","label":{"blocks":[{"key":"cmv9e","text":"Placeholder Label","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}},{"id":"birthdate","element":"Date","required":false,"label":{"blocks":[{"key":"bolae","text":"Placeholder Label","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}},"value":"2020-08-23T13:36:33.929Z","maxDate":null,"minDate":null},{"id":"מספר תעודת זהות","element":"TextInput","required":false,"label":{"blocks":[{"key":"cp3c2","text":"Placeholder Label","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}},"value":""}]
+  previewItems: []
 };
 
 export default (state = initialState, action) => {
