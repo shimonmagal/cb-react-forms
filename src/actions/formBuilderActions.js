@@ -10,7 +10,7 @@ import {
   SUBMIT_EDITOR_STATE
 } from "./types";
 
-export const initPreivew = defaultItems => {
+export const initPreview = defaultItems => {
   return {
     type: INIT_PREVIEW, 
     payload: defaultItems 
