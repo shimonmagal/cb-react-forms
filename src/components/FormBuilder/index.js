@@ -13,10 +13,10 @@ const Builder = ({
   editorVisible,
   onSubmit,
   items,
-  previewItems
+  previewItems2
 }) => {
   console.log("badiz");
-  console.log(previewItems);
+  console.log(previewItems2);
 
   return (
     <React.Fragment>
@@ -28,7 +28,7 @@ const Builder = ({
         <div className="row mt-3">
           <div className="col-md-8">
             <Preview
-              previewItems={previewItems}
+              previewItems={previewItems2}
               onSubmit={onSubmit}
             />
           </div>
