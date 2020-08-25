@@ -42,7 +42,8 @@ class Preview extends Component {
       showEditor,
       previewItems,
       previewItems2,
-      connectDropTarget
+      connectDropTarget,
+      initPreview
     } = this.props;
 
     const border = hovered ? "1px solid green" : "1px solid #ccc";
@@ -117,7 +118,8 @@ export default compose(
     {
       removeItem,
       dragItem,
-      showEditor
+      showEditor,
+      initPreview
     }
   ),
   DropTarget(type, {}, collect)
