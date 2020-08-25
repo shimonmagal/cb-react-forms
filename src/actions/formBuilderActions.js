@@ -25,6 +25,7 @@ export const addItem = wholeItem => {
     case 'Header':
     case 'Paragraph':
     case 'Label':
+    case 'LineBreak':
       id = uuid();
   }
 
