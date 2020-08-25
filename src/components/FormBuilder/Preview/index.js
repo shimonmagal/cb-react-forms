@@ -33,6 +33,12 @@ class Preview extends Component {
     this.setState({ showFinalPreview: false });
   };
 
+  componentDidMount()
+  {
+    console.log("yay");
+    this.props.initPreview(this.props.previewItems2);
+  }
+
   render() {
     const {
       hovered,
@@ -47,11 +53,6 @@ class Preview extends Component {
     } = this.props;
 
     const border = hovered ? "1px solid green" : "1px solid #ccc";
-
-    console.log("yay");
-    console.log(previewItems);
-    console.log(previewItems2);
-    initPreview(previewItems2);
 
     return connectDropTarget(
       <div style={{ height: "100%" }} className="mt-3">
