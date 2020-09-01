@@ -47,7 +47,7 @@ class Dropdown extends FormadComponent {
         >
           <option value={null} />
           {options.map(({ id, value }) => (
-            <option key={id} value={id}>{value}</option>
+            <option key={id} value={value}>{value}</option>
           ))}
         </select>
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
