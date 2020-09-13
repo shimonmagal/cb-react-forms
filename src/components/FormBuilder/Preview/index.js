@@ -44,6 +44,7 @@ class Preview extends Component {
       hovered,
       dragItem,
       onSubmit,
+      onSubmitAs,
       removeItem,
       showEditor,
       previewItems,
@@ -80,6 +81,13 @@ class Preview extends Component {
               disabled={isEmpty(previewItems)}
             >
               Save
+            </button>
+            <button
+              className="btn btn-dark float-right ml-3"
+              onClick={() => onSubmitAs(JSON.stringify(previewItems))}
+              disabled={isEmpty(previewItems)}
+            >
+              Save as...
             </button>
           </div>
           <div
