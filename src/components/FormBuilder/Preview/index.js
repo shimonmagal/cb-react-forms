@@ -75,20 +75,20 @@ class Preview extends Component {
             >
               Preview
             </button>
-            <button
+            {onSubmit ? <button
               className="btn btn-dark float-right ml-3"
               onClick={() => onSubmit(JSON.stringify(previewItems))}
               disabled={isEmpty(previewItems)}
             >
               Save
-            </button>
-            <button
+            </button> : null}
+            {onSubmitAs ? <button
               className="btn btn-dark float-right ml-3"
               onClick={() => onSubmitAs(JSON.stringify(previewItems))}
               disabled={isEmpty(previewItems)}
             >
               Save as...
-            </button>
+            </button> : null}
           </div>
           <div
             className="jumbotron bg-default"
