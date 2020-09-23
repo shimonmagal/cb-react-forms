@@ -13,7 +13,10 @@ const Builder = ({
   editorVisible,
   onSubmit,
   onSubmitAs,
-  items,
+  itemsA,
+  itemsACaption,
+  itemsB,
+  itemsBCaption,
   previewItems2
 }) => {
 
@@ -34,7 +37,10 @@ const Builder = ({
           </div>
           <div className="col-md-4">
             <Toolbar 
-              items={items} 
+              itemsA={itemsA}
+              itemsACaption={itemsACaption}
+              itemsB={itemsB}
+              itemsBCaption={itemsBCaption}
             />
           </div>
         </div>
@@ -46,7 +52,10 @@ const Builder = ({
 Builder.propTypes = {
 	onSubmit: PropTypes.func.isRequired,
   onSubmitAs: PropTypes.func.isRequired,
-	items: PropTypes.array,
+  itemsA: PropTypes.array,
+  itemsACaption: PropTypes.string,
+  itemsB: PropTypes.array,
+  itemsBCaption: PropTypes.string,
   previewItems2: PropTypes.array
 };
 
