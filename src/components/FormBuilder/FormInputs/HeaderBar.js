@@ -8,7 +8,7 @@ class HeaderBar extends Component {
     return (
       <div style={{opacity}}>
         <span className="badge badge-secondary">
-          {item.id ?? item.element}
+          {item.id ? item.id : item.element}
         </span>
         <span
           onClick={() => removeItem(id)}
