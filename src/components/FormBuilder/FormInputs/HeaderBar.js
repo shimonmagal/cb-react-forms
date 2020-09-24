@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 
 class HeaderBar extends Component {
-  renderTag()
+  renderTag(item)
   {
       // is uuid
       if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))

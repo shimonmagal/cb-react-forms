@@ -43,7 +43,7 @@ const ToolbarItem = props => {
           <i className={classNames(data.icon, "mr-3")} />
           {data.name}
         </div>
-        {props.itemsALogo ? <img width="100" height="44" src={props.itemsALogo}/> : <div/>}
+        {props.itemsALogo ? <img width="65" height="28" src={props.itemsALogo}/> : <div/>}
       </div>
     </li>
   );
