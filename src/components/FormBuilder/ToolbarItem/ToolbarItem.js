@@ -39,7 +39,7 @@ const ToolbarItem = props => {
       onClick={() => props.addItem(props.data)}
     >
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
-        <img width="100" height="44" src={itemsALogo}/>
+        {props.itemsALogo ? <img width="100" height="44" src={props.itemsALogo}/> : <div/>}
       </div>
     </li>
   );
