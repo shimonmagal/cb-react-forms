@@ -1,6 +1,17 @@
 import React, {Component} from "react";
 
 class HeaderBar extends Component {
+  renderTag()
+  {
+      // is uuid
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+      {
+          return item.element;
+      }
+      
+      return item.id;
+  }
+
   render() {
     const {item, removeItem, id, showEditor, isHovering} = this.props;
     const opacity = isHovering ? 1 : 0;
@@ -8,7 +19,7 @@ class HeaderBar extends Component {
     return (
       <div style={{opacity}}>
         <span className="badge badge-secondary">
-          {item.id ? item.id : item.element}
+          {this.renderTag(item)}
         </span>
         <span
           onClick={() => removeItem(id)}

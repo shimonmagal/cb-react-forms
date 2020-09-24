@@ -15,6 +15,7 @@ const Builder = ({
   onSubmitAs,
   itemsA,
   itemsACaption,
+  itemsALogo,
   itemsB,
   itemsBCaption,
   previewItems2
@@ -39,6 +40,7 @@ const Builder = ({
             <Toolbar 
               itemsA={itemsA}
               itemsACaption={itemsACaption}
+              itemsALogo={itemsALogo}
               itemsB={itemsB}
               itemsBCaption={itemsBCaption}
             />
@@ -54,6 +56,7 @@ Builder.propTypes = {
   onSubmitAs: PropTypes.func.isRequired,
   itemsA: PropTypes.array,
   itemsACaption: PropTypes.string,
+  itemsALogo: PropTypes.string,
   itemsB: PropTypes.array,
   itemsBCaption: PropTypes.string,
   previewItems2: PropTypes.array

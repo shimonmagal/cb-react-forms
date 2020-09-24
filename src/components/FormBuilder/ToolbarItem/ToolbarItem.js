@@ -38,8 +38,9 @@ const ToolbarItem = props => {
       className="list-group-item mb-1 toolbar-item"
       onClick={() => props.addItem(props.data)}
     >
-      <i className={classNames(data.icon, "mr-3")} />
-      {data.name}
+      <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+        <img width="100" height="44" src={itemsALogo}/>
+      </div>
     </li>
   );
 };

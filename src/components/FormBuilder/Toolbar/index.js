@@ -1,7 +1,7 @@
 import React from "react";
 import ToolbarItem from "../ToolbarItem/ToolbarItem";
 
-const Toolbar = ({ itemsA, itemsACaption, itemsB, itemsBCaption }) => (
+const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) => (
   <React.Fragment>
     <h3
       className="text-center mt-3"
@@ -11,13 +11,11 @@ const Toolbar = ({ itemsA, itemsACaption, itemsB, itemsBCaption }) => (
     </h3>
     <ul className="list-group">
       {itemsA.map(item => (
-        <ToolbarItem data={item} key={item.key} />
+        <ToolbarItem data={item} key={item.key} itemsALogo={itemsALogo}/>
       ))}
     </ul>
 
-    <br/>
     <hr/>
-    <br/>
 
    <h3
       className="text-center mt-3"

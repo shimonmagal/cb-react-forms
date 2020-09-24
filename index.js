@@ -9,13 +9,14 @@ import './css/font-awesome.min.css';
 import "./css/bootstrap.min.css";
 import "./src/App.scss";
 
-const FormBuilder = ({ onSubmit, onSubmitAs, itemsA, itemsACaption, itemsB, itemsBCaption, previewItems2 }) => (
+const FormBuilder = ({ onSubmit, onSubmitAs, itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption, previewItems2 }) => (
 	<Provider store={store}>
     <Builder 
       onSubmit={onSubmit}
       onSubmitAs={onSubmitAs} 
       itemsA={itemsA}
       itemsACaption={itemsACaption}
+      itemsALogo={itemsALogo}
       itemsB={itemsB}
       itemsBCaption={itemsBCaption}
       previewItems2={previewItems2}
