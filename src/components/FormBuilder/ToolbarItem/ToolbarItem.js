@@ -23,6 +23,7 @@ const spec = {
     const dragIndex = monitor.getItem().index;
 	const hoverIndex = props.index;
 
+	console.log(component);
 	console.log("--" + dragIndex + " " + hoverIndex);
 	
 	// Don't replace items with themselves
