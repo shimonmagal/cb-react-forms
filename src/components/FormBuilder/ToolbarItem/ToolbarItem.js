@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { DragSource } from "react-dnd";
+import { DragSource, DropTarget } from "react-dnd";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { addItem } from "../../../actions/formBuilderActions";
@@ -16,6 +16,13 @@ const spec = {
       item: props.data.key
     };
   },
+  endDrag(props, monitor, component) {
+    if (!monitor.didDrop()) return; // return if not dropped in the Preview component
+    props.addItem(props.data);
+  }
+};
+
+const specTarget = {
 	hover(props, monitor, component)
 	{
 		const dragIndex = monitor.getItem().index;
@@ -73,12 +80,8 @@ const spec = {
 		// but it's good here for the sake of performance
 		// to avoid expensive index searches.
 		monitor.getItem().index = hoverIndex;
-	},
-		endDrag(props, monitor, component) {
-    if (!monitor.didDrop()) return; // return if not dropped in the Preview component
-    props.addItem(props.data);
-  }
-};
+	}
+}
 
 const collect = (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
@@ -118,5 +121,6 @@ export default compose(
       addItem
     }
   ),
-  DragSource(type, spec, collect)
+  DragSource(type, spec, collect),
+  DropTarget(type, specTarget, collect)
 )(ToolbarItem);
