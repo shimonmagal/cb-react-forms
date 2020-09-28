@@ -22,6 +22,8 @@ const spec = {
 	
     const dragIndex = monitor.getItem().index;
 	const hoverIndex = props.index;
+
+	console.log("--" + dragIndex + " " + hoverIndex);
 	
 	// Don't replace items with themselves
 	if (isEqual(dragIndex, hoverIndex)) {
@@ -42,8 +44,10 @@ const spec = {
 
   // Get pixels to the top
   const hoverClientY = clientOffset.y - hoverBoundingRect.top;
-
-  // Only perform the move when the mouse has crossed half of the items height
+	
+	  console.log("--2-- " + hoverMiddleY + " " + hoverClientY);
+	
+	  // Only perform the move when the mouse has crossed half of the items height
   // When dragging downwards, only move when the cursor is below 50%
   // When dragging upwards, only move when the cursor is above 50%
   // Dragging downwards
