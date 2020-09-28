@@ -1,14 +1,24 @@
 import React from "react";
 import classNames from "classnames";
-import { DragSource } from "react-dnd";
+import { DragSource, DropTarget } from "react-dnd";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { addItem } from "../../../actions/formBuilderActions";
 import isEqual from "lodash/isEqual";
 import {findDOMNode} from "react-dom";
+import { addItem } from "../../../actions/formBuilderActions";
 
 // type, spec and collect are the paramters to the DragSource HOC
 const type = props => "items";
+
+const spec2 = {
+	hover(props, monitor, component)
+	{
+		console.log(props);
+		console.log(monitor);
+		console.log(monitor.getItem());
+		console.log(component);
+	}
+}
 
 const spec = {
   beginDrag(props) {
@@ -26,7 +36,7 @@ const spec = {
 	  console.log(monitor);
 	  console.log(monitor.getItem());
 	console.log(component);
-	console.log("--" + dragIndex + " " + hoverIndex);
+	console.log(`--${  dragIndex  } ${  hoverIndex}`);
 	
 	// Don't replace items with themselves
 	if (isEqual(dragIndex, hoverIndex)) {
@@ -48,7 +58,7 @@ const spec = {
   // Get pixels to the top
   const hoverClientY = clientOffset.y - hoverBoundingRect.top;
 	
-	  console.log("--2-- " + hoverMiddleY + " " + hoverClientY);
+	  console.log(`--2-- ${  hoverMiddleY  } ${  hoverClientY}`);
 	
 	  // Only perform the move when the mouse has crossed half of the items height
   // When dragging downwards, only move when the cursor is below 50%
@@ -105,7 +115,7 @@ const ToolbarItem = props => {
           <i className={classNames(data.icon, "mr-3")} />
           {data.name}
         </div>
-        {props.itemsALogo ? <img width="65" height="28" src={props.itemsALogo}/> : <div/>}
+        {props.itemsALogo ? <img width="65" height="28" src={props.itemsALogo} /> : <div />}
       </div>
     </li>
   );
@@ -120,5 +130,7 @@ export default compose(
       addItem
     }
   ),
-  DragSource(type, spec, collect)
+  DragSource(type, spec, collect),
+	DropTarget(type, spec2, connect => ({
+		connectDropTarget: connect.dropTarget()}))
 )(ToolbarItem);
