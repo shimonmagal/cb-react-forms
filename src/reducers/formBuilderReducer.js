@@ -28,9 +28,11 @@ export default (state = initialState, action) => {
       }
     }
     case ADD_ITEM_TO_PREVIEW:
-      console.log("here2");
-      console.log(action.payload);
-      console.log(state.previewItems);
+      if (state.previewItems.map(x => x.id).includes(action.payload.id))
+      {
+        alert("This element cannot be added more than once");
+        return {...state};
+      }
 
       return {
         ...state,
