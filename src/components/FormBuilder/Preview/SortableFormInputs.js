@@ -52,6 +52,14 @@ const cardTarget = {
     if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
       return;
     }
+    
+    console.log("debug");
+    console.log(dragIndex);
+    console.log(hoverIndex);
+    console.log(monitor.getItem());
+    console.log(props);
+    console.log(component);
+    console.log("done debug----");
 
     // Time to actually perform the action
     props.dragItem(dragIndex, hoverIndex);
@@ -101,7 +109,7 @@ class FormInputs extends Component {
               id={id}
               removeItem={removeItem}
               showEditor={showEditor}
-              isHovering={this.state.isHovering}
+              isHovering={true}
             />
             {switchItems(item)}
           </div>
