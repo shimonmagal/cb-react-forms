@@ -22,7 +22,9 @@ const spec = {
 	
     const dragIndex = monitor.getItem().index;
 	const hoverIndex = props.index;
-
+	  console.log(props);
+	  console.log(monitor);
+	  console.log(monitor.getItem());
 	console.log(component);
 	console.log("--" + dragIndex + " " + hoverIndex);
 	
