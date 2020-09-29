@@ -1,14 +1,24 @@
 import React from "react";
 import classNames from "classnames";
-import { DragSource } from "react-dnd";
+import {DragSource, DropTarget} from "react-dnd";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { addItem } from "../../../actions/formBuilderActions";
 import isEqual from "lodash/isEqual";
 import {findDOMNode} from "react-dom";
+import {flow} from "lodash";
 
 // type, spec and collect are the paramters to the DragSource HOC
 const type = props => "items";
+
+const spec2= {
+	hover(props, monitor, component)
+	{
+		console.log(props);
+		console.log(monitor);
+		console.log(component);
+	}
+};
 
 const spec = {
   beginDrag(props) {
@@ -121,5 +131,9 @@ export default compose(
       addItem
     }
   ),
-  DragSource(type, spec, collect)
+  flow(
+  DragSource(type, spec, collect),
+  DropTarget(type), spec2, connect => ({
+	  connectDropTarget: connect.dropTarget()
+  }))
 )(ToolbarItem);
