@@ -133,7 +133,7 @@ export default compose(
   ),
   flow(
   DragSource(type, spec, collect),
-  DropTarget(type), spec2, connect => ({
-	  connectDropTarget: connect.dropTarget()
-  }))
+  DropTarget(type, spec2, connect => ({
+	  connectDropTarget: connect.dropTarget()}))
+  )
 )(ToolbarItem);
