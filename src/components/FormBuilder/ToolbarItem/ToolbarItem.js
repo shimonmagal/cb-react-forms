@@ -23,7 +23,9 @@ const spec2= {
 const spec = {
   beginDrag(props) {
     return {
-      item: props.data.key
+      item: props.data.key,
+	    id: props.id,
+	    index: props.index
     };
   },
   endDrag(props, monitor, component) {
@@ -36,8 +38,10 @@ const spec = {
 	  console.log(monitor);
 	  console.log(monitor.getItem());
 console.log(monitor.getDropResult());
+	  console.log(monitor.getClientOffset());
 	console.log(component);
 	console.log("--" + dragIndex + " " + hoverIndex);
+	
 	
 	// Don't replace items with themselves
 	if (isEqual(dragIndex, hoverIndex)) {
