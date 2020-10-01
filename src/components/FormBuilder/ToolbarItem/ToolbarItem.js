@@ -11,12 +11,21 @@ import {flow} from "lodash";
 // type, spec and collect are the paramters to the DragSource HOC
 const type = "item";
 
-const spec2= {
-	hover(props, monitor, component)
+const type2 = props => "items";
+
+const spec2 = {
+	beginDrag(props)
 	{
-		console.log(props);
-		console.log(monitor);
-		console.log(component);
+		return {
+			item: props.data.key,
+			id: props.id,
+			index: props.index
+		};
+	},
+	endDrag(props, monitor, component)
+	{
+		if (!monitor.didDrop()) return; // return if not dropped in the Preview component
+		props.addItem(props.data);
 	}
 };
 
@@ -24,8 +33,8 @@ const spec = {
   beginDrag(props) {
     return {
       item: props.data.key,
-	    id: props.data.id,
-	    index: 3
+	    id: props.id,
+	    index: props.index
     };
   },
   endDrag(props, monitor, component) {
@@ -135,5 +144,6 @@ export default compose(
       addItem
     }
   ),
-  DragSource(type, spec, collect)
+  DragSource(type, spec, collect),
+	DragSource(type2, spec2, collect)
 )(ToolbarItem);
