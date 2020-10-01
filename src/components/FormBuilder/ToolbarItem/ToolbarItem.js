@@ -144,7 +144,6 @@ export default compose(
       addItem
     }
   ),
-  flow(
-  DragSource(type, spec, collect),
-	DragSource(type2, spec2, collect))
+  this.props.itemsALogo ? DragSource(type, spec, collect) :
+	DragSource(type2, spec2, collect)
 )(ToolbarItem);
