@@ -9,9 +9,7 @@ import {findDOMNode} from "react-dom";
 import {flow} from "lodash";
 
 // type, spec and collect are the paramters to the DragSource HOC
-const type = "item";
-
-const type2 = props => "items";
+const type = props => {console.log("this is it: " + props); return "item"};
 
 const spec2 = {
 	beginDrag(props)
@@ -144,6 +142,5 @@ export default compose(
       addItem
     }
   ),
-  this.props.itemsALogo ? DragSource(type, spec, collect) :
-	DragSource(type2, spec2, collect)
+DragSource(type, spec, collect)
 )(ToolbarItem);
