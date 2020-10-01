@@ -24,8 +24,8 @@ const spec = {
   beginDrag(props) {
     return {
       item: props.data.key,
-	    id: props.id,
-	    index: props.index
+	    id: props.data.id,
+	    index: 3
     };
   },
   endDrag(props, monitor, component) {
