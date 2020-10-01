@@ -9,7 +9,7 @@ import {findDOMNode} from "react-dom";
 import {flow} from "lodash";
 
 // type, spec and collect are the paramters to the DragSource HOC
-const type = props => "items";
+const type = "item";
 
 const spec2= {
 	hover(props, monitor, component)
@@ -135,9 +135,5 @@ export default compose(
       addItem
     }
   ),
-  flow(
-  DragSource(type, spec, collect),
-  DropTarget(type, spec2, connect => ({
-	  connectDropTarget: connect.dropTarget()}))
-  )
+  DragSource(type, spec, collect)
 )(ToolbarItem);
