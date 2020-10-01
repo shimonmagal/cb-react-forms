@@ -20,12 +20,8 @@ export const initPreview = defaultItems => {
 export const addItem = wholeItem => {
   let id = wholeItem.name;
 
-  switch(wholeItem.key)
+  if (!wholeItem.unique)
   {
-    case 'Header':
-    case 'Paragraph':
-    case 'Label':
-    case 'LineBreak':
       id = uuid();
   }
 
