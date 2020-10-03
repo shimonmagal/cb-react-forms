@@ -104,9 +104,9 @@ class Preview extends Component {
               previewItems.map((item, i) => (
                 <FormInputs
                   index={i}
-                  item={item ? item: {}}
-                  id={item ? item.id: 1}
-                  key={item ? item.id: 4}
+                  item={item ? item: {id : i}}
+                  id={item ? item.id: i}
+                  key={item ? item.id: i}
                   dragItem={dragItem}
                   removeItem={removeItem}
                   showEditor={showEditor}
