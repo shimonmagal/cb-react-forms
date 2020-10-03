@@ -18,7 +18,7 @@ const spec2 = {
 		props.addItem(props.data, toRet);
 
 		console.log(toRet[0]);
-		data.id = toRet[0].id;
+		props.data.id = toRet[0].id;
 		
 		return toRet[0];
 	},
