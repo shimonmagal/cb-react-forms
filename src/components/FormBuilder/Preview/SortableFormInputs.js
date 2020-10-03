@@ -5,12 +5,14 @@ import { DragSource, DropTarget } from "react-dnd";
 import isEqual from "lodash/isEqual";
 import HeaderBar from "../FormInputs/HeaderBar";
 import switchItems from "../FormInputs/switchItems";
+import {addItem} from "../../../actions/formBuilderActions";
 
 const cardSource = {
   beginDrag(props) {
     return {
       id: props.id,
-      index: props.index
+      index: props.index,
+      maxIndex: props.maxIndex
     };
   }
 };
@@ -24,9 +26,17 @@ const cardTarget = {
     console.log(monitor.getItem());
     console.log("hover <<<");
   
-    const dragIndex = monitor.getItem().index;
     const hoverIndex = props.index;
+    let dragIndex = monitor.getItem().index;
 
+    if (!monitor.getItem().index)
+    {
+      monitor.getItem().index = props.maxIndex;
+      addItem(monitor.getItem());
+      monitor.getItem().index = props.maxIndex;
+      dragIndex = props.maxIndex;
+    }
+    
     // Don't replace items with themselves
     if (isEqual(dragIndex, hoverIndex)) {
       return;

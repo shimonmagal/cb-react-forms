@@ -17,7 +17,7 @@ export const initPreview = defaultItems => {
   }
 }
 
-export const addItem = wholeItem => {
+export const addItem = (wholeItem, toReturn) => {
   let id = wholeItem.name;
 
   if (!wholeItem.unique)
@@ -28,6 +28,11 @@ export const addItem = wholeItem => {
   let element = wholeItem.key
   const props = addPropsToItem(element);
   const item = { id, element, ...props };
+  
+  
+  
+  toReturn.push(item);
+  
   return { 
     type: ADD_ITEM_TO_PREVIEW, 
     payload: item 

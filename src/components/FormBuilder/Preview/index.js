@@ -110,6 +110,7 @@ class Preview extends Component {
                   dragItem={dragItem}
                   removeItem={removeItem}
                   showEditor={showEditor}
+                  maxIndex={previewItems.length}
                 />
               ))}
           </div>
