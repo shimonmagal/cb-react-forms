@@ -17,6 +17,12 @@ const cardSource = {
 
 const cardTarget = {
   hover(props, monitor, component) {
+   console.log("hover >>>>>>");
+    console.log(props);
+    console.log(monitor);
+    console.log(monitor);
+    console.log("hover <<<");
+  
     const dragIndex = monitor.getItem().index;
     const hoverIndex = props.index;
 
