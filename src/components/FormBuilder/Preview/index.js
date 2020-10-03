@@ -13,7 +13,7 @@ import FormInputs from "./SortableFormInputs";
 import FinalFormPreview from "./FinalFormPreview";
 
 // DropTarget parameters
-const type = () => "item";
+const type = () => "items";
 
 const collect = (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
