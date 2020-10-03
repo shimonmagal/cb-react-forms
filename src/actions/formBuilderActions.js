@@ -51,7 +51,7 @@ export const removeItem = id => (
 );
 
 
-export const finializeItem = id => (
+export const finalizeItem = id => (
     {
         type: FINALIZE_ITEM,
         payload: {

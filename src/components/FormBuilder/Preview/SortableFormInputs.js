@@ -5,7 +5,6 @@ import { DragSource, DropTarget } from "react-dnd";
 import isEqual from "lodash/isEqual";
 import HeaderBar from "../FormInputs/HeaderBar";
 import switchItems from "../FormInputs/switchItems";
-import {addItem} from "../../../actions/formBuilderActions";
 
 const cardSource = {
   beginDrag(props) {
@@ -14,24 +13,19 @@ const cardSource = {
       index: props.index,
       maxIndex: props.maxIndex
     };
-  }
+  },
+    endDrag(props) {
+      props.finalizeItem(props.id);
+    }
 };
 
 const cardTarget = {
   hover(props, monitor, component) {
-   console.log("hover >>>>>>");
-    console.log(props);
-    console.log(monitor);
-    console.log(component);
-    console.log(monitor.getItem());
-    console.log("hover <<<");
-  
     const hoverIndex = props.index;
     let dragIndex = monitor.getItem().index;
 
     if (!monitor.getItem().index)
     {
-        console.log("love");
       dragIndex = props.maxIndex - 1;
     }
     
@@ -68,14 +62,6 @@ const cardTarget = {
       return;
     }
     
-    console.log("debug");
-    console.log(dragIndex);
-    console.log(hoverIndex);
-    console.log(monitor.getItem());
-    console.log(props);
-    console.log(component);
-    console.log("done debug----");
-
     // Time to actually perform the action
     props.dragItem(dragIndex, hoverIndex);
 

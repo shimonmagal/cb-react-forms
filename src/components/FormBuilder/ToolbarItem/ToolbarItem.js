@@ -3,7 +3,7 @@ import classNames from "classnames";
 import {DragSource, DropTarget} from "react-dnd";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { addItem, removeItem, finializeItem } from "../../../actions/formBuilderActions";
+import { addItem, removeItem, finalizeItem } from "../../../actions/formBuilderActions";
 import isEqual from "lodash/isEqual";
 import {findDOMNode} from "react-dom";
 import {flow} from "lodash";
@@ -25,7 +25,7 @@ const spec = {
 	{
 		if (!monitor.didDrop()) props.removeItem(props.data.id); // return if not dropped in the Preview component
 		
-		props.finializeItem(props.data.id);
+		props.finalizeItem(props.data.id);
 	}
 };
 
@@ -64,7 +64,7 @@ export default compose(
       previewItems: state.formBuilder
     }),
     {
-      addItem, removeItem, finializeItem
+      addItem, removeItem, finalizeItem
     },
   ),
 DragSource(type, spec, collect)

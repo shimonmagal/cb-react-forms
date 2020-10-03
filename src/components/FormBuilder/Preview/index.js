@@ -6,6 +6,7 @@ import isEmpty from "lodash/isEmpty";
 import {
   removeItem,
   dragItem,
+  finalizeItem,
   showEditor,
   initPreview
 } from "../../../actions/formBuilderActions";
@@ -43,6 +44,7 @@ class Preview extends Component {
     const {
       hovered,
       dragItem,
+        finalizeItem,
       onSubmit,
       onSubmitAs,
       removeItem,
@@ -109,6 +111,7 @@ class Preview extends Component {
                   key={item.id}
                   dragItem={dragItem}
                   removeItem={removeItem}
+                  finalizeItem={finalizeItem}
                   showEditor={showEditor}
                   maxIndex={previewItems.length}
                 />
@@ -128,6 +131,7 @@ export default compose(
     {
       removeItem,
       dragItem,
+      finalizeItem,
       showEditor,
       initPreview
     }
