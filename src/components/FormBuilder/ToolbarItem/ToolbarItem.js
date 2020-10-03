@@ -9,7 +9,7 @@ import {findDOMNode} from "react-dom";
 import {flow} from "lodash";
 
 // type, spec and collect are the paramters to the DragSource HOC
-const type = props => {console.log("this is it: " + props); return "item"};
+const type = props => {console.log("this is it: " + JSON.stringify(props)); return "item"};
 
 const spec2 = {
 	beginDrag(props)
@@ -36,6 +36,9 @@ const spec = {
     };
   },
   endDrag(props, monitor, component) {
+  	console.log("endDrag---");
+  	console.log(props.data);
+  	
     if (!monitor.didDrop()) return; // return if not dropped in the Preview component
     props.addItem(props.data);
 	
