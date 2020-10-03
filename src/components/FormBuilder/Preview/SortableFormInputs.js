@@ -111,7 +111,7 @@ class FormInputs extends Component {
               id={id}
               removeItem={removeItem}
               showEditor={showEditor}
-              isHovering={true}
+              isHovering={this.state.isHovering}
             />
             {switchItems(item)}
           </div>
