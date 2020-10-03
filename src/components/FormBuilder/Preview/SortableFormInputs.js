@@ -20,7 +20,8 @@ const cardTarget = {
    console.log("hover >>>>>>");
     console.log(props);
     console.log(monitor);
-    console.log(monitor);
+    console.log(component);
+    console.log(monitor.getItem());
     console.log("hover <<<");
   
     const dragIndex = monitor.getItem().index;
