@@ -14,11 +14,10 @@ const type = props => {console.log("this is it: " + JSON.stringify(props)); retu
 const spec2 = {
 	beginDrag(props)
 	{
-		return {
-			item: props.data.key,
-			id: props.id,
-			index: props.index
-		};
+		const toRet = [];
+		props.addItem(props.data, toRet);
+		
+		return toRet[0];
 	},
 	endDrag(props, monitor, component)
 	{

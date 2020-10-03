@@ -29,8 +29,6 @@ export const addItem = (wholeItem, toReturn) => {
   const props = addPropsToItem(element);
   const item = { id, element, ...props };
   
-  
-  
   toReturn.push(item);
   
   return { 
