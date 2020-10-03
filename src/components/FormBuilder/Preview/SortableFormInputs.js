@@ -93,6 +93,8 @@ class FormInputs extends Component {
 
     const opacity = isDragging ? 0 : 1;
 
+    console.log(item);
+    
     return (
       connectDragSource &&
       connectDropTarget &&
