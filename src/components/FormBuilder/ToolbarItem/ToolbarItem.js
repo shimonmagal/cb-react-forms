@@ -6,7 +6,6 @@ import { compose } from "redux";
 import { addItem, removeItem, finalizeItem } from "../../../actions/formBuilderActions";
 import isEqual from "lodash/isEqual";
 import {findDOMNode} from "react-dom";
-import {flow} from "lodash";
 
 // type, spec and collect are the paramters to the DragSource HOC
 const type = props => "item";
