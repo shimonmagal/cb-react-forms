@@ -32,8 +32,7 @@ const cardTarget = {
     if (!monitor.getItem().index)
     {
       monitor.getItem().index = props.maxIndex;
-      addItem(monitor.getItem());
-      monitor.getItem().index = props.maxIndex;
+      //addItem(monitor.getItem());
       dragIndex = props.maxIndex;
     }
     

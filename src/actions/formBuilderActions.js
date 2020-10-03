@@ -29,7 +29,10 @@ export const addItem = (wholeItem, toReturn) => {
   const props = addPropsToItem(element);
   const item = { id, element, ...props };
   
-  toReturn.push(item);
+  if (toReturn)
+  {
+      toReturn.push(item);
+  }
   
   return { 
     type: ADD_ITEM_TO_PREVIEW, 

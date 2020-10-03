@@ -16,13 +16,13 @@ const spec2 = {
 	{
 		const toRet = [];
 		props.addItem(props.data, toRet);
-		
+
+		console.log(toRet[0]);
 		return toRet[0];
 	},
 	endDrag(props, monitor, component)
 	{
 		if (!monitor.didDrop()) return; // return if not dropped in the Preview component
-		props.addItem(props.data);
 	}
 };
 
