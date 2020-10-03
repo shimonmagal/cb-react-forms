@@ -5,6 +5,7 @@ import {
   ADD_ITEM_TO_PREVIEW, 
   REMOVE_ITEM_FROM_PREVIEW, 
   DRAG_ITEM_IN_PREVIEW,
+    FINALIZE_ITEM,
   SHOW_EDITOR,
   HIDE_EDITOR,
   SUBMIT_EDITOR_STATE
@@ -48,6 +49,7 @@ export const removeItem = id => (
     } 
   }
 );
+
 
 export const finializeItem = id => (
     {
