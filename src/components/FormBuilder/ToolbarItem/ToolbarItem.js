@@ -144,5 +144,5 @@ export default compose(
       addItem
     }
   ),
-DragSource(type, spec, collect)
+DragSource(type, spec2, collect)
 )(ToolbarItem);
