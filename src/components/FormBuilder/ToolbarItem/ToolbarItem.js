@@ -3,7 +3,7 @@ import classNames from "classnames";
 import {DragSource, DropTarget} from "react-dnd";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { addItem } from "../../../actions/formBuilderActions";
+import { addItem, removeItem } from "../../../actions/formBuilderActions";
 import isEqual from "lodash/isEqual";
 import {findDOMNode} from "react-dom";
 import {flow} from "lodash";
@@ -12,17 +12,20 @@ import {flow} from "lodash";
 const type = props => {console.log("this is it: " + JSON.stringify(props)); return "item"};
 
 const spec2 = {
+	id: 0,
 	beginDrag(props)
 	{
 		const toRet = [];
 		props.addItem(props.data, toRet);
 
 		console.log(toRet[0]);
+		this.id = toRet[0].id;
+		
 		return toRet[0];
 	},
 	endDrag(props, monitor, component)
 	{
-		if (!monitor.didDrop()) return; // return if not dropped in the Preview component
+		if (!monitor.didDrop()) props.removeItem(id); // return if not dropped in the Preview component
 	}
 };
 
@@ -141,8 +144,8 @@ export default compose(
       previewItems: state.formBuilder
     }),
     {
-      addItem
-    }
+      addItem, removeItem
+    },
   ),
 DragSource(type, spec2, collect)
 )(ToolbarItem);
