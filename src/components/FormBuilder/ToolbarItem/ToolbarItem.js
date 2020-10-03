@@ -9,15 +9,14 @@ import {findDOMNode} from "react-dom";
 import {flow} from "lodash";
 
 // type, spec and collect are the paramters to the DragSource HOC
-const type = props => {console.log("this is it: " + JSON.stringify(props)); return "item"};
+const type = props => "item";
 
-const spec2 = {
+const spec = {
 	beginDrag(props)
 	{
 		const toRet = [];
 		props.addItem(props.data, toRet);
 
-		console.log(toRet[0]);
 		props.data.id = toRet[0].id;
 		
 		return toRet[0];
@@ -28,86 +27,6 @@ const spec2 = {
 		
 		props.finializeItem(props.data.id);
 	}
-};
-
-const spec = {
-  beginDrag(props) {
-    return {
-      item: props.data.key,
-	    id: props.id,
-	    index: props.index
-    };
-  },
-  endDrag(props, monitor, component) {
-  	console.log("endDrag---");
-  	console.log(props.data);
-  	
-    if (!monitor.didDrop()) return; // return if not dropped in the Preview component
-    props.addItem(props.data);
-	
-    const dragIndex = monitor.getItem().index;
-	const hoverIndex = props.index;
-	  console.log(props);
-	  console.log(monitor);
-	  console.log(monitor.getItem());
-console.log(monitor.getDropResult());
-	  console.log(monitor.getClientOffset());
-	console.log(component);
-	console.log("--" + dragIndex + " " + hoverIndex);
-	
-	
-	// Don't replace items with themselves
-	if (isEqual(dragIndex, hoverIndex)) {
-		return;
-    }
-	
-	// Determine rectangle on screen
-	const hoverBoundingRect = findDOMNode(
-	  component
-    ).getBoundingClientRect();
-
-  // Get vertical middle
-  const hoverMiddleY =
-	  (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
-
-  // Determine mouse position
-  const clientOffset = monitor.getClientOffset();
-
-  // Get pixels to the top
-  const hoverClientY = clientOffset.y - hoverBoundingRect.top;
-	
-	  console.log("--2-- " + hoverMiddleY + " " + hoverClientY);
-	
-	  // Only perform the move when the mouse has crossed half of the items height
-  // When dragging downwards, only move when the cursor is below 50%
-  // When dragging upwards, only move when the cursor is above 50%
-  // Dragging downwards
-  if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
-	  return;
-  }
-
-  // Dragging upwards
-  if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
-	  return;
-  }
-
-  console.log("debug");
-  console.log(dragIndex);
-  console.log(hoverIndex);
-  console.log(monitor.getItem());
-  console.log(props);
-  console.log(component);
-  console.log("done debug----");
-
-  // Time to actually perform the action
-  props.dragItem(dragIndex, hoverIndex);
-
-  // Note: we're mutating the monitor item here!
-  // Generally it's better to avoid mutations,
-  // but it's good here for the sake of performance
-  // to avoid expensive index searches.
-  monitor.getItem().index = hoverIndex;
-  }
 };
 
 const collect = (connect, monitor) => ({
@@ -148,5 +67,5 @@ export default compose(
       addItem, removeItem, finializeItem
     },
   ),
-DragSource(type, spec2, collect)
+DragSource(type, spec, collect)
 )(ToolbarItem);
