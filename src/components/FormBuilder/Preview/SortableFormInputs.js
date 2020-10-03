@@ -106,7 +106,7 @@ class FormInputs extends Component {
       connectDropTarget
     } = this.props;
 
-    const opacity = isDragging ? 0 : 1;
+    const opacity = item.isDragging ? 0 : 1;
 
     console.log(item);
     

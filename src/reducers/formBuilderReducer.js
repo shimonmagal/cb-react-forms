@@ -6,7 +6,7 @@ import {
   DRAG_ITEM_IN_PREVIEW,
   SHOW_EDITOR,
   HIDE_EDITOR,
-  SUBMIT_EDITOR_STATE
+  SUBMIT_EDITOR_STATE, FINALIZE_ITEM
 } from "../actions/types";
 
 const initialState = {
@@ -46,12 +46,21 @@ export default (state = initialState, action) => {
           item => item.id !== action.payload.id
         )
       };
+      
+    case FINALIZE_ITEM:
+      return {
+        ...state,
+        previewItems: state.previewItems.map(
+            item => ((item.id !== action.payload.id)? item : {...item, isDragging: false})
+        )
+      }
 
     case DRAG_ITEM_IN_PREVIEW:
       const { dragIndex, hoverIndex } = action.payload;
       const dragCard = state.previewItems[dragIndex];
+      let dragCard2 = {...dragCard, isDragging: true}
       const updatedItems = update(state.previewItems, {
-        $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]]
+        $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard2]]
       });
       return {
         ...state,

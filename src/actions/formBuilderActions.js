@@ -49,6 +49,15 @@ export const removeItem = id => (
   }
 );
 
+export const finializeItem = id => (
+    {
+        type: FINALIZE_ITEM,
+        payload: {
+            id
+        }
+    }
+);
+
 export const dragItem = (dragIndex, hoverIndex) => (
   { 
     type: DRAG_ITEM_IN_PREVIEW, 
