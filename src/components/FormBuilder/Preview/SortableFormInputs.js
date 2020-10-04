@@ -24,7 +24,7 @@ const cardTarget = {
     const hoverIndex = props.index;
     let dragIndex = monitor.getItem().index;
 
-    if (!monitor.getItem().index === undefined)
+    if (monitor.getItem().index === undefined)
     {
       dragIndex = props.maxIndex - 1;
     }
