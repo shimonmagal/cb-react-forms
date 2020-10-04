@@ -24,9 +24,9 @@ const cardTarget = {
     const hoverIndex = props.index;
     let dragIndex = monitor.getItem().index;
 
-    if (!monitor.getItem().index)
+    if (!monitor.getItem().index === undefined)
     {
-    //  dragIndex = props.maxIndex - 1;
+      dragIndex = props.maxIndex - 1;
     }
     
     // Don't replace items with themselves
@@ -35,16 +35,10 @@ const cardTarget = {
     }
 
     // Determine rectangle on screen
-    const hoverBoundingNode = findDOMNode(
-        component
-    );
-    const hoverBoundingRect = hoverBoundingNode.getBoundingClientRect();
+    const hoverBoundingRect = findDOMNode(
+      component
+    ).getBoundingClientRect();
 
-    console.log("info")
-    console.log(component);
-    console.log(hoverBoundingNode);
-    console.log(hoverBoundingRect);
-    
     // Get vertical middle
     const hoverMiddleY =
       (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
@@ -54,13 +48,7 @@ const cardTarget = {
 
     // Get pixels to the top
     const hoverClientY = clientOffset.y - hoverBoundingRect.top;
-  
-    console.log(dragIndex + " " + hoverIndex + " " + hoverClientY + " " + hoverMiddleY)
-    console.log(clientOffset.y)
-    console.log(hoverBoundingRect.top)
-    console.log(hoverBoundingRect.bottom)
-  
-  
+
     // Only perform the move when the mouse has crossed half of the items height
     // When dragging downwards, only move when the cursor is below 50%
     // When dragging upwards, only move when the cursor is above 50%
@@ -68,9 +56,7 @@ const cardTarget = {
     if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
       return;
     }
-  
-    console.log("damn!");
-  
+
     // Dragging upwards
     if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
       return;
@@ -125,7 +111,7 @@ class FormInputs extends Component {
               id={id}
               removeItem={removeItem}
               showEditor={showEditor}
-              isHovering={this.state.isHovering}
+              isHovering={true}
             />
             {switchItems(item)}
           </div>

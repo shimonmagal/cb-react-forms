@@ -14,7 +14,7 @@ import FormInputs from "./SortableFormInputs";
 import FinalFormPreview from "./FinalFormPreview";
 
 // DropTarget parameters
-const type = () => "items";
+const type = () => "item";
 
 const collect = (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
