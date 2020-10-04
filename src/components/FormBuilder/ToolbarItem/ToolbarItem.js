@@ -23,6 +23,8 @@ const spec = {
 			return toRet[0];
 		}
 		else {
+			props.data.alreadyThere = true;
+			
 			return null;
 		}
 	},
@@ -30,7 +32,10 @@ const spec = {
 	{
 		if (!monitor.didDrop())
 		{
-			props.removeItem(props.data.id);
+			if (!props.data.alreadyThere)
+			{
+				props.removeItem(props.data.id);
+			}
 		}
 		else
 		{
