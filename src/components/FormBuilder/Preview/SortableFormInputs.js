@@ -39,6 +39,10 @@ const cardTarget = {
       component
     ).getBoundingClientRect();
 
+    console.log("info")
+    console.log(component);
+    console.log(hoverBoundingRect);
+    
     // Get vertical middle
     const hoverMiddleY =
       (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
