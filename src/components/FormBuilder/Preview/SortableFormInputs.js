@@ -48,7 +48,13 @@ const cardTarget = {
 
     // Get pixels to the top
     const hoverClientY = clientOffset.y - hoverBoundingRect.top;
-
+  
+    console.log(dragIndex + " " + hoverIndex + " " + hoverClientY + " " + hoverMiddleY)
+    console.log(clientOffset.y)
+    console.log(hoverBoundingRect.top)
+    console.log(hoverBoundingRect.bottom)
+  
+  
     // Only perform the move when the mouse has crossed half of the items height
     // When dragging downwards, only move when the cursor is below 50%
     // When dragging upwards, only move when the cursor is above 50%
@@ -56,7 +62,9 @@ const cardTarget = {
     if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
       return;
     }
-
+  
+    console.log("damn!");
+  
     // Dragging upwards
     if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
       return;
