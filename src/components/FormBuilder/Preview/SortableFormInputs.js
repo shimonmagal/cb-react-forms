@@ -35,12 +35,14 @@ const cardTarget = {
     }
 
     // Determine rectangle on screen
-    const hoverBoundingRect = findDOMNode(
-      component
-    ).getBoundingClientRect();
+    const hoverBoundingNode = findDOMNode(
+        component
+    );
+    const hoverBoundingRect = hoverBoundingNode.getBoundingClientRect();
 
     console.log("info")
     console.log(component);
+    console.log(hoverBoundingNode);
     console.log(hoverBoundingRect);
     
     // Get vertical middle
