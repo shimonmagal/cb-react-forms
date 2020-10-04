@@ -28,15 +28,20 @@ export default (state = initialState, action) => {
       }
     }
     case ADD_ITEM_TO_PREVIEW:
-      if (state.previewItems.map(x => x.id).includes(action.payload.id))
+      if (state.previewItems.map(x => x.id).includes(action.payload.item.id))
       {
         alert("This element cannot be added more than once");
         return {...state};
       }
-
+  
+      if (action.payload.toReturn)
+      {
+        action.payload.toReturn.push(action.payload.item);
+      }
+      
       return {
         ...state,
-        previewItems: [...state.previewItems, action.payload]
+        previewItems: [...state.previewItems, action.payload.item]
       };
 
     case REMOVE_ITEM_FROM_PREVIEW:

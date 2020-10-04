@@ -16,15 +16,26 @@ const spec = {
 		const toRet = [];
 		props.addItem(props.data, toRet);
 
-		props.data.id = toRet[0].id;
-		
-		return toRet[0];
+		if (toRet.length > 0)
+		{
+			props.data.id = toRet[0].id;
+			
+			return toRet[0];
+		}
+		else {
+			return null;
+		}
 	},
 	endDrag(props, monitor, component)
 	{
-		if (!monitor.didDrop()) props.removeItem(props.data.id); // return if not dropped in the Preview component
-		
-		props.finalizeItem(props.data.id);
+		if (!monitor.didDrop())
+		{
+			props.removeItem(props.data.id);
+		}
+		else
+		{
+			props.finalizeItem(props.data.id);
+		}
 	}
 };
 

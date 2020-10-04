@@ -30,14 +30,9 @@ export const addItem = (wholeItem, toReturn) => {
   const props = addPropsToItem(element);
   const item = { id, element, ...props };
   
-  if (toReturn)
-  {
-      toReturn.push(item);
-  }
-  
   return { 
     type: ADD_ITEM_TO_PREVIEW, 
-    payload: item 
+    payload: {item: item, toReturn: toReturn}
   };
 };
 
