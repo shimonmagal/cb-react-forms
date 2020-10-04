@@ -43,7 +43,7 @@ class FileInput extends FormadComponent {
         <input 
           {...props}
           value={null}
-          type={type}
+          type="file"
           className={className} 
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}

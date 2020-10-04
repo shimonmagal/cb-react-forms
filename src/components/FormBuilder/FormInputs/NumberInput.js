@@ -42,7 +42,7 @@ class NumberInput extends FormadComponent {
         />
         <input 
           {...props}
-          type={type}
+          type="number"
           className={className} 
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
