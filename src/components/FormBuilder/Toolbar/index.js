@@ -14,11 +14,9 @@ function ContextAwareToggle({ caption, eventKey, callback }) {
     const isCurrentEventKey = currentEventKey === eventKey;
     
     return (
-      <div
-        className="ToolboxHeader"
-        onClick={decoratedOnClick}
-      >
+      <div>
         <h4
+          onClick={decoratedOnClick}
           className="text-center mt-3"
           style={{ height: "50px", margin: 0 }}
         >

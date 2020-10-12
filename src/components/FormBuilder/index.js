@@ -19,25 +19,24 @@ const Builder = ({
   itemsB,
   itemsBCaption,
   previewItems2
-}) => {
-
-  return (
-    <React.Fragment>
-      {
+}) => (
+  <React.Fragment>
+    {
         editorVisible &&
         <FormEditor />
       }
-      <div className="container">
-        <div className="row mt-3">
-          <div className="col-md-9">
-            <Preview
-              previewItems2={previewItems2}
-              onSubmit={onSubmit}
-              onSubmitAs={onSubmitAs}
-            />
-          </div>
-          <div className="col-md-3">
-            <Toolbar 
+    <div className="container">
+      <div className="row mt-3">
+        <div className="col-md-9">
+          <Preview
+            previewItems2={previewItems2}
+            onSubmit={onSubmit}
+            onSubmitAs={onSubmitAs}
+          />
+        </div>
+        <div className="col-md-3">
+          <div style={{position: "sticky", top: "0px"}}>
+            <Toolbar
               itemsA={itemsA}
               itemsACaption={itemsACaption}
               itemsALogo={itemsALogo}
@@ -47,9 +46,9 @@ const Builder = ({
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </div>
+  </React.Fragment>
   )
-}
 
 Builder.propTypes = {
 	onSubmit: PropTypes.func.isRequired,
