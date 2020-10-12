@@ -32,6 +32,20 @@ class NumberInput extends FormadComponent {
         borderColor: meta.touched && required && meta.error ? "red" : ""
       },
     } : {}
+  
+    let placeholder = "";
+  
+    if (item)
+    {
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+      {
+        placeholder = "Enter numeric value here";
+      }
+      else if (!readOnly)
+      {
+        placeholder = `Enter ${item.id} here`;
+      }
+    }
     
     return (
       <div>
@@ -43,7 +57,8 @@ class NumberInput extends FormadComponent {
         <input 
           {...props}
           type="number"
-          className={className} 
+          className={className}
+          placeholder={placeholder}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </div>

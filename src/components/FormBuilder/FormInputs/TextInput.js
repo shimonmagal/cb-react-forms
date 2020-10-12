@@ -31,13 +31,19 @@ class TextInput extends FormadComponent {
     
     let placeholder = "";
   
-    if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+    console.log(this.props);
+    console.log(JSON.stringify(this.props));
+  
+    if (item)
     {
-      placeholder = "Enter answer here";
-    }
-    else if (!readOnly)
-    {
-      placeholder = `Enter ${  item.id  } here`;
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+      {
+        placeholder = "Enter answer here";
+      }
+      else if (!readOnly)
+      {
+        placeholder = `Enter ${item.id} here`;
+      }
     }
     
     return (
@@ -51,7 +57,6 @@ class TextInput extends FormadComponent {
           {..._props}
           type={type}
           className={className}
-          disabled={readOnly}
           placeholder={placeholder}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}

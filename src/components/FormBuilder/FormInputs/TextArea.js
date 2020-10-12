@@ -26,7 +26,21 @@ class TextArea extends FormadComponent {
         borderColor: meta.touched && required && meta.error ? "red" : ""
       }
     } : {}
-
+  
+    let placeholder = "";
+    
+    if (item)
+    {
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+      {
+        placeholder = "Enter answer here";
+      }
+      else if (!readOnly)
+      {
+        placeholder = `Enter ${item.id} here`;
+      }
+    }
+    
     return (
       <React.Fragment>
         <HeaderLabel 
@@ -35,7 +49,8 @@ class TextArea extends FormadComponent {
         />
         <textarea 
           {..._props}
-          className={className} 
+          className={className}
+          placeholder={placeholder}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </React.Fragment>
