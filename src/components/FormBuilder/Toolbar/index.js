@@ -23,7 +23,8 @@ function ContextAwareToggle({ caption, eventKey, callback }) {
           style={{ height: "50px", margin: 0 }}
         >
           {caption}
-          <i className={`fa fa-angle-right ${isCurrentEventKey ? "isRotated" : ""}`} />
+            &nbsp;
+          <i className={`fa fa-angle-right ${isCurrentEventKey ? "isOpen" : "isClosed"}`} />
         </h4>
       </div>
     );
@@ -53,14 +54,7 @@ const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) =
     <Accordion defaultActiveKey="0">
       <Card>
         <Card.Header>
-          <ContextAwareToggle eventKey="0">
-            <h3
-              className="text-center mt-3"
-              style={{ height: "50px", margin: 0 }}
-            >
-              {itemsBCaption}
-            </h3>
-          </ContextAwareToggle>
+          <ContextAwareToggle eventKey="0" caption={itemsBCaption} />
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body>

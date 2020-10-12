@@ -7,7 +7,11 @@
 	text-decoration: underline;
 }
 
-i.fa.fa-angle-right.isRotated {
+i.fa.fa-angle-right.isOpen {
 	transform: rotate(90deg);
-	transition-duration: 1s;
+	transition-duration: 0.5s;
+}
+i.fa.fa-angle-right.isClosed {
+	transform: rotate(0deg);
+	transition-duration: 0.5s;
 }
