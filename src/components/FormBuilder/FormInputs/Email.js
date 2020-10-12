@@ -17,11 +17,13 @@ class Email extends FormadComponent {
       showError,
       defaultValue,
     } = this.props;
-
+  
+    const finalReadOnly = readOnly || item.readOnly;
+  
     const props = generator ? {
       type,
       ...input,
-      disabled: readOnly,
+      disabled: finalReadOnly,
       className: "form-control",
       value: defaultValue || input.value,
       onChange: e => input.onChange(e.target.value),
@@ -40,7 +42,7 @@ class Email extends FormadComponent {
           required={generator ? required : item.required}
           readOnly={readOnly}
         />
-        <input {...props} />
+        <input {...props} disabled={finalReadOnly} />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </React.Fragment>
     );

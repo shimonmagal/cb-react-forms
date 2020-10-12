@@ -42,7 +42,7 @@ class TextInput extends FormadComponent {
       {
         placeholder = "Enter answer here";
       }
-      else if (!readOnly)
+      else if (!finalReadOnly)
       {
         placeholder = `Enter ${realId} here`;
       }

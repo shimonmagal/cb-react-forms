@@ -34,7 +34,9 @@ class Tags extends Component {
       showError,
       defaultValue,
     } = this.props;
-
+  
+    const finalReadOnly = readOnly || item.readOnly;
+  
     const animatedComponents = makeAnimated();
     
     const options = generator ? this.props.options : this.props.item.options;
@@ -59,6 +61,7 @@ class Tags extends Component {
           isMulti={isMulti}
           options={options}
           components={animatedComponents}
+          disabled={finalReadOnly}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </React.Fragment>

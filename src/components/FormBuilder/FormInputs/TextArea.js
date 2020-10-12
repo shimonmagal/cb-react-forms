@@ -17,7 +17,9 @@ class TextArea extends FormadComponent {
       defaultValue,
       id
     } = this.props;
-
+  
+    const finalReadOnly = readOnly || item.readOnly;
+  
     const _props = generator ? {
       ...input,
       disabled: readOnly,
@@ -38,7 +40,7 @@ class TextArea extends FormadComponent {
       {
         placeholder = "Enter answer here";
       }
-      else if (!readOnly)
+      else if (!finalReadOnly)
       {
         placeholder = `Enter ${realId} here`;
       }
@@ -54,6 +56,7 @@ class TextArea extends FormadComponent {
           {..._props}
           className={className}
           placeholder={placeholder}
+          disabled={finalReadOnly}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </React.Fragment>

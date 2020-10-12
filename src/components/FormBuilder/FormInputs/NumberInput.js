@@ -23,7 +23,9 @@ class NumberInput extends FormadComponent {
       defaultValue,
       id,
     } = this.props;
-
+  
+    const finalReadOnly = readOnly || item.readOnly;
+  
     const props = generator ? {
       ...input,
       disabled: readOnly,
@@ -44,7 +46,7 @@ class NumberInput extends FormadComponent {
       {
         placeholder = "Enter numeric value here";
       }
-      else if (!readOnly)
+      else if (!finalReadOnly)
       {
         placeholder = `Enter ${realId} here`;
       }
@@ -62,6 +64,7 @@ class NumberInput extends FormadComponent {
           type="number"
           className={className}
           placeholder={placeholder}
+          disabled={finalReadOnly}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </div>

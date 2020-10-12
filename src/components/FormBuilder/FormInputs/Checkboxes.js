@@ -28,7 +28,9 @@ class Checkboxes extends FormadComponent {
       className,
       defaultValue,
     } = this.props;
-
+  
+    const finalReadOnly = readOnly || item.readOnly;
+  
     const _props = generator ? {
       type,
       disabled: readOnly,
@@ -69,6 +71,7 @@ class Checkboxes extends FormadComponent {
                 name={value}
                 value={value}
                 readOnly={generator ? false : true}
+                disabled={finalReadOnly}
                 className={className}
                 checked={isChecked(id)}
                 onChange={e => change(e.target.checked, id)}
