@@ -13,17 +13,13 @@ const convertHtmlToRawJs = html => {
 
 const html = "<div>Placeholder Label</div>";
 
-export default (item) => {
+export default (item, id) => {
   
   let newHtml = html;
   
-  console.log("-----4$");
-  console.log(item);
-  
-  if ((item.id) &&
-      (!(/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))))
+  if (!(/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id)))
   {
-    newHtml = `<div> ${  item.id  } </div>`;
+    newHtml = `<div> ${  id  } </div>`;
   }
   
   switch (item) {

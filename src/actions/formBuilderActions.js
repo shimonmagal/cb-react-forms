@@ -27,7 +27,7 @@ export const addItem = (wholeItem, toReturn) => {
   }
 
   let element = wholeItem.key
-  const props = addPropsToItem(element);
+  const props = addPropsToItem(element, id);
   const item = { id, element, ...props };
   
   return { 
