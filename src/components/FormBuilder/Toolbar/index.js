@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {Accordion, AccordionContext, Card, useAccordionToggle} from 'react-bootstrap';
 import ToolbarItem from "../ToolbarItem/ToolbarItem";
+import './Toolbar.css';
 
 function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
@@ -13,13 +14,13 @@ function ContextAwareToggle({ children, eventKey, callback }) {
     const isCurrentEventKey = currentEventKey === eventKey;
     
     return (
-      <button
-        type="button"
-        style={{ backgroundColor: isCurrentEventKey ? 'pink' : 'lavender' }}
+      <div
+        className="ToolboxHeader"
         onClick={decoratedOnClick}
       >
         {children}
-      </button>
+        <i className={`fa fa-angle-down ${isCurrentEventKey ? "isRotated" : ""}`} />
+      </div>
     );
 }
 

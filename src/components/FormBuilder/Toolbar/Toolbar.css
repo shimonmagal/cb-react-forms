@@ -1,0 +1,12 @@
+.ToolboxHeader {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.ToolboxHeader:hover {
+	text-decoration: underline;
+}
+
+.isRotated svg {
+	transform: rotate(-90deg);
+}

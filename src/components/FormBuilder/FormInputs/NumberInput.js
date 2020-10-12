@@ -38,7 +38,7 @@ class NumberInput extends FormadComponent {
   
     let placeholder = "";
   
-    if (item || id)
+    if ((item || id) && !finalReadOnly)
     {
       const realId = (item ? item.id : null) || id;
   
@@ -46,7 +46,7 @@ class NumberInput extends FormadComponent {
       {
         placeholder = "Enter numeric value here";
       }
-      else if (!finalReadOnly)
+      else
       {
         placeholder = `Enter ${realId} here`;
       }

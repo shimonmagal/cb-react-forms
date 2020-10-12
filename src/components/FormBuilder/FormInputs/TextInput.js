@@ -48,18 +48,6 @@ class TextInput extends FormadComponent {
       }
     }
     
-    if (item)
-    {
-      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
-      {
-        placeholder = "Enter answer here";
-      }
-      else if (!readOnly)
-      {
-        placeholder = `Enter ${item.id} here`;
-      }
-    }
-    
     return (
       <div>
         <HeaderLabel
