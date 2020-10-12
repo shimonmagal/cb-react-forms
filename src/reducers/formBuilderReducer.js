@@ -19,9 +19,6 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case INIT_PREVIEW:
     {
-      console.log("here");
-      console.log(action.payload);
-
       return {
         ...state,
         previewItems: action.payload

@@ -20,6 +20,8 @@ class TextInput extends FormadComponent {
         id
     } = this.props;
 
+    console.log(this.props);
+    
     const _props = generator ? {
       ...input,
       disabled: readOnly,
