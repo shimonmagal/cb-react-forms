@@ -18,7 +18,7 @@ function ContextAwareToggle({ caption, eventKey, callback }) {
         <h4
           onClick={decoratedOnClick}
           className="text-center mt-3"
-          style={{ height: "50px", margin: 0 }}
+          style={{ height: "50px", margin: 0, cursor: "pointer"}}
         >
           {caption}
             &nbsp;
