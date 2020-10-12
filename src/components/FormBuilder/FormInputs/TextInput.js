@@ -29,22 +29,21 @@ class TextInput extends FormadComponent {
       },
     } : {}
     
-    const finalLabel = generator ? label : item.label;
-    
     let placeholder = "";
-    if (finalLabel == "TextInput")
+  
+    if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
     {
       placeholder = "Enter answer here";
     }
     else if (!readOnly)
     {
-      placeholder = "Enter " + finalLabel + " here";
+      placeholder = `Enter ${  item.id  } here`;
     }
     
     return (
       <div>
         <HeaderLabel
-          label={finalLabel}
+          label={generator ? label : item.label}
           required={generator ? required : item.required}
           readOnly={readOnly}
         />
