@@ -28,39 +28,53 @@ const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) =
     <Accordion defaultActiveKey="0">
       <Card>
         <Card.Header>
-          <ContextAwareToggle eventKey="0">Click me!</ContextAwareToggle>
+          <ContextAwareToggle eventKey="0">
+            <h3
+              className="text-center mt-3"
+              style={{ height: "50px", margin: 0 }}
+            >
+              {itemsACaption}
+            </h3>
+          </ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
-          <Card.Body>Hello! --he body</Card.Body>
+          <Card.Body>
+            <ul className="list-group" style={{marginBottom: "10px !important"}}>
+              {itemsA.map(item => (
+                <ToolbarItem data={item} key={item.key} itemsALogo={itemsALogo} />
+                  ))}
+            </ul>
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
+    </Accordion>
+    
+    <hr />
+    
+    <Accordion defaultActiveKey="0">
+      <Card>
+        <Card.Header>
+          <ContextAwareToggle eventKey="0">
+            <h3
+              className="text-center mt-3"
+              style={{ height: "50px", margin: 0 }}
+            >
+              {itemsBCaption}
+            </h3>
+          </ContextAwareToggle>
+        </Card.Header>
+        <Accordion.Collapse eventKey="0">
+          <Card.Body>
+            <ul className="list-group">
+              {itemsB.map(item => (
+                <ToolbarItem data={item} key={item.key} />
+                          ))}
+            </ul>
+          </Card.Body>
         </Accordion.Collapse>
       </Card>
     </Accordion>
       
-    <h3
-      className="text-center mt-3"
-      style={{ height: "50px", margin: 0 }}
-    >
-      {itemsACaption}
-    </h3>
-    <ul className="list-group" style={{marginBottom: "10px !important"}}>
-      {itemsA.map(item => (
-        <ToolbarItem data={item} key={item.key} itemsALogo={itemsALogo} />
-      ))}
-    </ul>
-
-    <hr />
-
-    <h3
-      className="text-center mt-3"
-      style={{ height: "50px", margin: 0 }}
-    >
-      {itemsBCaption}
-    </h3>
-    <ul className="list-group">
-      {itemsB.map(item => (
-        <ToolbarItem data={item} key={item.key} />
-      ))}
-    </ul>
   </React.Fragment>
 );
 
