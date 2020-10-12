@@ -15,3 +15,15 @@ i.fa.fa-angle-right.isClosed {
 	transform: rotate(0deg);
 	transition-duration: 0.5s;
 }
+
+accordion>.card .card-header {
+	margin-bottom: -1px;
+	height: 60px;
+	padding: 0 0;
+}
+accordion>.card .card-header {
+	padding: 0px;
+}
+li.list-group-item.mb-1.toolbar-item {
+	margin-bottom: .2rem!important;
+}
