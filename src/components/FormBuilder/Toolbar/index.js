@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
 import {Accordion, Card, useAccordionToggle} from 'react-bootstrap';
 import ToolbarItem from "../ToolbarItem/ToolbarItem";
-import Arrow from '../../../images/dropdown_arrow.webp';
 
 function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
@@ -32,7 +31,7 @@ const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) =
           <ContextAwareToggle eventKey="0">Click me!</ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
-          <Card.Body>Hello! I'm the body</Card.Body>
+          <Card.Body>Hello! --he body</Card.Body>
         </Accordion.Collapse>
       </Card>
     </Accordion>
@@ -42,7 +41,6 @@ const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) =
       style={{ height: "50px", margin: 0 }}
     >
       {itemsACaption}
-      <img className="toggleArrow" src={Arrow} width="20" height="20" alt="toggle toolbox" />
     </h3>
     <ul className="list-group" style={{marginBottom: "10px !important"}}>
       {itemsA.map(item => (
