@@ -56,7 +56,6 @@ class TextArea extends FormadComponent {
           {..._props}
           className={className}
           placeholder={placeholder}
-          disabled={finalReadOnly}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </React.Fragment>

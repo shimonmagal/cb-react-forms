@@ -64,7 +64,6 @@ class NumberInput extends FormadComponent {
           type="number"
           className={className}
           placeholder={placeholder}
-          disabled={finalReadOnly}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </div>

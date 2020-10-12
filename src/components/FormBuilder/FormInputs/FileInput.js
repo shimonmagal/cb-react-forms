@@ -22,9 +22,7 @@ class FileInput extends FormadComponent {
       showError,
       defaultValue,
     } = this.props;
-  
-    const finalReadOnly = readOnly || item.readOnly;
-  
+
     const props = generator ? {
       ...input,
       disabled: readOnly,
@@ -46,8 +44,7 @@ class FileInput extends FormadComponent {
           {...props}
           value={null}
           type="file"
-          className={className}
-          disabled={finalReadOnly}
+          className={className} 
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </div>

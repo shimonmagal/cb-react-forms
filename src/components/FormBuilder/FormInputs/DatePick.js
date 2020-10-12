@@ -17,9 +17,7 @@ class DatePick extends FormadComponent {
       showError,
       defaultValue,
     } = this.props;
-  
-    const finalReadOnly = readOnly || item.readOnly;
-  
+
     const _props = generator ? {
       value: defaultValue || input.value,
       onChange: val => input.onChange(val),
@@ -62,14 +60,12 @@ class DatePick extends FormadComponent {
             required={generator ? required : item.required}
             readOnly={readOnly} 
           />
-          <fieldset disabled={finalReadOnly}>
-            {generator
-              ? renderDate(formInput.minDate, formInput.maxDate)
-              : <DatePicker {..._props} />}
-            <div>
-              {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
-            </div>
-          </fieldset>
+          {generator 
+            ? renderDate(formInput.minDate, formInput.maxDate)
+            : <DatePicker {..._props} />}
+          <div>
+            {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
+          </div>
         </React.Fragment>
       </div>
     )

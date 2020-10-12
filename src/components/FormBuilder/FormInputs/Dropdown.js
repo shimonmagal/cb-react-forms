@@ -17,13 +17,11 @@ class Dropdown extends FormadComponent {
       showError,
       defaultValue,
     } = this.props;
-  
-    const finalReadOnly = readOnly || item.readOnly;
-  
+
     const _props = generator ? {
       ...input,
       disabled: readOnly,
-      defaultValue,
+      defaultValue: defaultValue,
       onChange: e => {
         console.log(e.target.value)
         input.onChange(e.target.value)
@@ -44,7 +42,7 @@ class Dropdown extends FormadComponent {
         />
         <select 
           className={className} 
-          disabled={finalReadOnly}
+          disabled={disabled} 
           {..._props}
         >
           <option value={null} />

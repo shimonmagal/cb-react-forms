@@ -17,10 +17,8 @@ class Hyperlink extends Component {
       placeholder,
 			defaultValue,
 		} = this.props;
-	
-	  const finalReadOnly = readOnly || item.readOnly;
-	
-	  const _props = generator ? {
+
+		const _props = generator ? {
 			...input,
 			style: {borderColor: meta.touched && required && meta.error ? "red" : ""},
 			value: defaultValue || input.value,
@@ -40,7 +38,6 @@ class Hyperlink extends Component {
 					type={type}
           className={className}
 					placeholder={placeholder}
-                    disabled={finalReadOnly}
 				/>
 				{generator ? showError(meta.touched, meta.error, meta.warning) : ''}
 			</React.Fragment>
