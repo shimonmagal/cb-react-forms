@@ -24,7 +24,7 @@ class NumberInput extends FormadComponent {
       id,
     } = this.props;
   
-    const finalReadOnly = readOnly || item.readOnly;
+    const finalReadOnly = readOnly || (item && item.readOnly);
   
     const props = generator ? {
       ...input,

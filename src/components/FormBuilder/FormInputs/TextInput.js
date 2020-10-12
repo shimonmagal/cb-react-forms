@@ -19,8 +19,8 @@ class TextInput extends FormadComponent {
       defaultValue,
         id
     } = this.props;
-
-    const finalReadOnly = readOnly || item.readOnly;
+  
+    const finalReadOnly = readOnly || (item && item.readOnly);
     
     const _props = generator ? {
       ...input,
