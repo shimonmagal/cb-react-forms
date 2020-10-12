@@ -17,6 +17,9 @@ export default (item) => {
   
   let newHtml = html;
   
+  console.log("-----4$");
+  console.log(item);
+  
   if ((item.id) &&
       (!(/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))))
   {
