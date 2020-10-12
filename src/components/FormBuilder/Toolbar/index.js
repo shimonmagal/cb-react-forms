@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {Accordion, Card, useAccordionToggle} from 'react-bootstrap';
+import {Accordion, AccordionContext, Card, useAccordionToggle} from 'react-bootstrap';
 import ToolbarItem from "../ToolbarItem/ToolbarItem";
 
 function ContextAwareToggle({ children, eventKey, callback }) {
