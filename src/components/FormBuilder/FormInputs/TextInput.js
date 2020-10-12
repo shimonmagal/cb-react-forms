@@ -16,7 +16,7 @@ class TextInput extends FormadComponent {
       generator,
       className,
       showError,
-      defaultValue,
+      defaultValue
     } = this.props;
 
     const _props = generator ? {
@@ -29,17 +29,31 @@ class TextInput extends FormadComponent {
       },
     } : {}
     
+    const finalLabel = generator ? label : item.label;
+    
+    let placeholder = "";
+    if (finalLabel == "TextInput")
+    {
+      placeholder = "Enter answer here";
+    }
+    else if (!readOnly)
+    {
+      placeholder = "Enter " + finalLabel + " here";
+    }
+    
     return (
       <div>
         <HeaderLabel
-          label={generator ? label : item.label}
+          label={finalLabel}
           required={generator ? required : item.required}
           readOnly={readOnly}
         />
         <input 
           {..._props}
           type={type}
-          className={className} 
+          className={className}
+          disabled={readOnly}
+          placeholder={placeholder}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </div>
