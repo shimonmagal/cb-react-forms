@@ -3,7 +3,7 @@ import {Accordion, AccordionContext, Card, useAccordionToggle} from 'react-boots
 import ToolbarItem from "../ToolbarItem/ToolbarItem";
 import './Toolbar.css';
 
-function ContextAwareToggle({ children, eventKey, callback }) {
+function ContextAwareToggle({ caption, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
     
     const decoratedOnClick = useAccordionToggle(
@@ -18,8 +18,13 @@ function ContextAwareToggle({ children, eventKey, callback }) {
         className="ToolboxHeader"
         onClick={decoratedOnClick}
       >
-        {children}
-        <i className={`fa fa-angle-down ${isCurrentEventKey ? "isRotated" : ""}`} />
+        <h4
+          className="text-center mt-3"
+          style={{ height: "50px", margin: 0 }}
+        >
+          {caption}
+          <i className={`fa fa-angle-right ${isCurrentEventKey ? "isRotated" : ""}`} />
+        </h4>
       </div>
     );
 }
@@ -29,14 +34,7 @@ const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) =
     <Accordion defaultActiveKey="0">
       <Card>
         <Card.Header>
-          <ContextAwareToggle eventKey="0">
-            <h3
-              className="text-center mt-3"
-              style={{ height: "50px", margin: 0 }}
-            >
-              {itemsACaption}
-            </h3>
-          </ContextAwareToggle>
+          <ContextAwareToggle eventKey="0" caption={itemsACaption} />
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
