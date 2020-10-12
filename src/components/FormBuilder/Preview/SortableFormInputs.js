@@ -113,7 +113,7 @@ class FormInputs extends Component {
               showEditor={showEditor}
               isHovering
             />
-            <fieldset disabled={item.readOnly}>
+            <fieldset disabled={item && item.readOnly}>
               {switchItems(item)}
             </fieldset>
           </div>

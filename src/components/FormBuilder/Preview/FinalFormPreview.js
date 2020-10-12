@@ -23,9 +23,9 @@ const FinalFormPreview = ({ hideFinalPreview, data }) => (
       </div>
       {map(data, item => (
         <div key={item.id} className="mb-4">
-            <fieldset disabled={item.readOnly}>
-                {switchItems(item)}
-            </fieldset>
+          <fieldset disabled={item && item.readOnly}>
+            {switchItems(item)}
+          </fieldset>
         </div>
       ))}
       <div style={{ height: "50px" }} className="mt-5">
