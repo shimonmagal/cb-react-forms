@@ -65,12 +65,14 @@ class TextInput extends FormadComponent {
           required={generator ? required : item.required}
           readOnly={readOnly}
         />
-        <input 
+        <fieldset disabled={readOnly}>
+          <input
           {..._props}
           type={type}
           className={className}
           placeholder={placeholder}
         />
+        </fieldset>
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </div>
     );
