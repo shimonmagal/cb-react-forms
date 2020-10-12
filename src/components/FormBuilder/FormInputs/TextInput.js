@@ -17,7 +17,7 @@ class TextInput extends FormadComponent {
       className,
       showError,
       defaultValue,
-      id
+        id
     } = this.props;
 
     const _props = generator ? {
@@ -32,20 +32,29 @@ class TextInput extends FormadComponent {
     
     let placeholder = "";
   
-    console.log(this.props);
-    console.log(JSON.stringify(this.props));
-  
     if (item || id)
     {
-      const realId = item.id || id;
-      
-      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id))
+      const realId = (item ? item.id : null) || id;
+    
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(realId))
       {
         placeholder = "Enter answer here";
       }
       else if (!readOnly)
       {
         placeholder = `Enter ${realId} here`;
+      }
+    }
+    
+    if (item)
+    {
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+      {
+        placeholder = "Enter answer here";
+      }
+      else if (!readOnly)
+      {
+        placeholder = `Enter ${item.id} here`;
       }
     }
     

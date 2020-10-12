@@ -38,9 +38,9 @@ class NumberInput extends FormadComponent {
   
     if (item || id)
     {
-      const realId = item.id || id;
-    
-      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id))
+      const realId = (item ? item.id : null) || id;
+  
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(realId))
       {
         placeholder = "Enter numeric value here";
       }

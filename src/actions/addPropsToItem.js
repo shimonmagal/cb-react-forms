@@ -17,7 +17,8 @@ export default (item) => {
   
   let newHtml = html;
   
-  if (!/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+  if ((item.id) &&
+      (!(/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))))
   {
     newHtml = `<div> ${  item.id  } </div>`;
   }
@@ -127,7 +128,7 @@ export default (item) => {
     case 'Range':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         value: 0,
         min: 0,
         max: 5,
@@ -137,7 +138,7 @@ export default (item) => {
     case 'Rating':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         value: 0,
         numberOfStars: 5
       };
@@ -147,13 +148,13 @@ export default (item) => {
     case 'Email':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         value: ''
       };
     case 'Date':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         value: new Date(),
         maxDate: null,
         minDate: null
@@ -161,7 +162,7 @@ export default (item) => {
     case 'Signature':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         value: '',
         height: 300,
         width: 300
