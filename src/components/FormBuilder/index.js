@@ -29,14 +29,14 @@ const Builder = ({
       }
       <div className="container">
         <div className="row mt-3">
-          <div className="col-md-8">
+          <div className="col-md-9">
             <Preview
               previewItems2={previewItems2}
               onSubmit={onSubmit}
               onSubmitAs={onSubmitAs}
             />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-3">
             <Toolbar 
               itemsA={itemsA}
               itemsACaption={itemsACaption}
