@@ -72,6 +72,7 @@ class TextInput extends FormadComponent {
           type={type}
           className={className}
           placeholder={placeholder}
+          disabled={finalReadOnly}
         />
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </div>
