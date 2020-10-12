@@ -15,6 +15,7 @@ class TextArea extends FormadComponent {
       generator,
       showError,
       defaultValue,
+      id
     } = this.props;
 
     const _props = generator ? {
@@ -28,16 +29,18 @@ class TextArea extends FormadComponent {
     } : {}
   
     let placeholder = "";
-    
-    if (item)
+  
+    if (item || id)
     {
-      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+      const realId = item.id || id;
+    
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id))
       {
         placeholder = "Enter answer here";
       }
       else if (!readOnly)
       {
-        placeholder = `Enter ${item.id} here`;
+        placeholder = `Enter ${realId} here`;
       }
     }
     

@@ -14,17 +14,24 @@ const convertHtmlToRawJs = html => {
 const html = "<div>Placeholder Label</div>";
 
 export default (item) => {
+  
+  let newHtml = html;
+  
+  if (!/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+  {
+    newHtml = `<div> ${  item.id  } </div>`;
+  }
+  
   switch (item) {
     case 'Header':
     case 'Paragraph':
     case 'Label':
       return {
-        label: convertHtmlToRawJs(html)
+        label: convertHtmlToRawJs(newHtml)
       };
-
     case 'Checkboxes':
       return {
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         required: false,
         options: [
           {
@@ -42,7 +49,7 @@ export default (item) => {
 
     case 'Dropdown':
       return {
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         required: false,
         options: [
           {
@@ -58,7 +65,7 @@ export default (item) => {
 
     case 'HyperLink':
       return {
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         required: false,
         value: ''
       };
@@ -69,21 +76,21 @@ export default (item) => {
     case 'NumberInput':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         value: 0
       };
       
     case 'FileInput':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         value: ''
       };
 
     case 'RadioButtons':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         options: [
           {
             id: uuid(),
@@ -102,7 +109,7 @@ export default (item) => {
     case 'Tags':
       return {
         required: false,
-        label: convertHtmlToRawJs(html),
+        label: convertHtmlToRawJs(newHtml),
         options: [
           {
             id: uuid(),

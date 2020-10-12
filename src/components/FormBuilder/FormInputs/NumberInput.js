@@ -21,12 +21,13 @@ class NumberInput extends FormadComponent {
       className,
       showError,
       defaultValue,
+      id,
     } = this.props;
 
     const props = generator ? {
       ...input,
       disabled: readOnly,
-      defaultValue: defaultValue,
+      defaultValue,
       onChange: e => input.onChange(e.target.value),
       style: {
         borderColor: meta.touched && required && meta.error ? "red" : ""
@@ -35,15 +36,17 @@ class NumberInput extends FormadComponent {
   
     let placeholder = "";
   
-    if (item)
+    if (item || id)
     {
-      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(item.id))
+      const realId = item.id || id;
+    
+      if (/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id))
       {
         placeholder = "Enter numeric value here";
       }
       else if (!readOnly)
       {
-        placeholder = `Enter ${item.id} here`;
+        placeholder = `Enter ${realId} here`;
       }
     }
     
