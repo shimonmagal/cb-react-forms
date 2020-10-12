@@ -47,9 +47,9 @@ const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) =
       </Card>
       <Card>
         <Card.Header>
-          <ContextAwareToggle eventKey="0" caption={itemsBCaption} />
+          <ContextAwareToggle eventKey="1" caption={itemsBCaption} />
         </Card.Header>
-        <Accordion.Collapse eventKey="0">
+        <Accordion.Collapse eventKey="1">
           <Card.Body>
             <ul className="list-group">
               {itemsB.map(item => (
