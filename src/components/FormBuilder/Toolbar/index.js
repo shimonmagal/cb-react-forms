@@ -45,11 +45,6 @@ const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) =
           </Card.Body>
         </Accordion.Collapse>
       </Card>
-    </Accordion>
-    
-    <hr />
-    
-    <Accordion defaultActiveKey="0">
       <Card>
         <Card.Header>
           <ContextAwareToggle eventKey="0" caption={itemsBCaption} />
@@ -59,13 +54,13 @@ const Toolbar = ({ itemsA, itemsACaption, itemsALogo, itemsB, itemsBCaption }) =
             <ul className="list-group">
               {itemsB.map(item => (
                 <ToolbarItem data={item} key={item.key} />
-                          ))}
+                        ))}
             </ul>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
     </Accordion>
-      
+    
   </React.Fragment>
 );
 

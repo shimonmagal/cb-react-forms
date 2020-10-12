@@ -3,9 +3,9 @@ import classNames from "classnames";
 import {DragSource, DropTarget} from "react-dnd";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { addItem, removeItem, finalizeItem } from "../../../actions/formBuilderActions";
 import isEqual from "lodash/isEqual";
 import {findDOMNode} from "react-dom";
+import { addItem, removeItem, finalizeItem } from "../../../actions/formBuilderActions";
 
 // type, spec and collect are the paramters to the DragSource HOC
 const type = props => "item";
@@ -22,11 +22,11 @@ const spec = {
 			
 			return toRet[0];
 		}
-		else {
+		
 			props.data.alreadyThere = true;
 			
 			return null;
-		}
+		
 	},
 	endDrag(props, monitor, component)
 	{
@@ -58,16 +58,16 @@ const ToolbarItem = props => {
 
   return connectDragSource(
     <li
-      style={{ cursor: "pointer", opacity, backgroundColor }}
+      style={{ cursor: "pointer", opacity, backgroundColor, height: "35px" }}
       className="list-group-item mb-1 toolbar-item"
       onClick={() => props.addItem(props.data)}
     >
-      <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+      <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "-5px"}}>
         <div>
           <i className={classNames(data.icon, "mr-3")} />
           {data.name}
         </div>
-        {props.itemsALogo ? <img width="65" height="28" src={props.itemsALogo}/> : <div/>}
+        {props.itemsALogo ? <img width="65" height="28" src={props.itemsALogo} style={{marginTop: "-5px"}} /> : <div />}
       </div>
     </li>
   );
