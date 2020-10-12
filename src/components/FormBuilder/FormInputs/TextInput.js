@@ -20,11 +20,11 @@ class TextInput extends FormadComponent {
         id
     } = this.props;
 
-    console.log(this.props);
+    const finalReadOnly = readOnly || item.readOnly;
     
     const _props = generator ? {
       ...input,
-      disabled: readOnly,
+      disabled: finalReadOnly,
       value: input.value,
       onChange: e => input.onChange(e.target.value),
       style: {
@@ -65,16 +65,14 @@ class TextInput extends FormadComponent {
         <HeaderLabel
           label={generator ? label : item.label}
           required={generator ? required : item.required}
-          readOnly={readOnly}
+          readOnly={finalReadOnly}
         />
-        <fieldset disabled={readOnly}>
           <input
           {..._props}
           type={type}
           className={className}
           placeholder={placeholder}
         />
-        </fieldset>
         {generator ? showError(meta.touched, meta.error, meta.warning) : ''}
       </div>
     );
