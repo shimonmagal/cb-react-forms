@@ -35,7 +35,7 @@ const Builder = ({
           />
         </div>
         <div className="col-md-3">
-          <div style={{position: "sticky", top: "0px"}}>
+          <div style={{position: "sticky", top: "1rem"}}>
             <Toolbar
               itemsA={itemsA}
               itemsACaption={itemsACaption}
